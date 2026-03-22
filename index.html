@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AURA Salon &amp; Spa | Elevate Your Aura</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&amp;family=Jost:wght@300;400;500&amp;family=Playfair+Display:ital,wght@1,400;1,600&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            ivory: '#FAF7F2',
+            rosegold: '#C49A7A',
+            charcoal: '#1E1E1E',
+          },
+          fontFamily: {
+            display: ['"Cormorant Garamond"', 'serif'],
+            body: ['"Jost"', 'sans-serif'],
+            accent: ['"Playfair Display"', 'serif'],
+          },
+        }
+      }
+    }
+  </script>
+<!-- Custom Styles for Layout & Animations -->
+<style data-purpose="layout">body {
+    background-color: #FAF7F2;
+    color: #1E1E1E;
+    font-family: "Jost", sans-serif;
+    overflow-x: hidden
+    }
+.grain-texture {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 50;
+    opacity: 0.03;
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuCccV3CIpwATfwIMsxALKf7wa09CEZS3nLqMEjghTeDIcS0IVfN7YFjFfI8km7K51H39KdZyW0wrZ9Y7Pj0klGOEH0v7EV3HvngL8tMked4-HCAYVi0KekO28iuq0UfeNEyoLAPzjWGudGFsEMPTKfmE9bxdtXuXEEnMjXB2RbZXShuk3J0UdgoMZWFB2n8rZEH2bXG2FUXMzJCLocNuY2OFTWbIRkLlmpNkdywYHYkuB5uzcEej1plos6NRYm4rALf8txPmvGpQMw)
+    }
+.fade-up {
+    opacity: 0;
+    transform: translatey(30px);
+    transition: all 0.8s ease-out
+    }
+.fade-up.visible {
+    opacity: 1;
+    transform: translatey(0)
+    }
+.diamond-divider::after {
+    content: "✦";
+    color: #C49A7A;
+    display: block;
+    text-align: center;
+    margin: 1rem 0
+    }
+.nav-scrolled {
+    background-color: #FAF7F2 !important;
+    border-bottom: 1px solid rgba(196, 154, 122, 0.2)
+    }
+.marquee-container {
+    overflow: hidden;
+    white-space: nowrap
+    }
+.marquee-content {
+    display: inline-block;
+    animation: marquee 20s linear infinite
+    }
+@keyframes marquee {
+    0% {
+        transform: translateX(0);
+        } 100% {
+        transform: translateX(-50%);
+        }
+    }</style>
+</head>
+<body>
+<div class="grain-texture"></div>
+<!-- BEGIN: StickyNavbar -->
+<nav class="fixed top-0 w-full z-40 transition-all duration-500 py-6 px-8 flex justify-between items-center bg-transparent" id="navbar">
+<div class="flex-1 hidden md:flex gap-8 text-xs tracking-widest uppercase font-medium">
+<a class="hover:text-rosegold transition-colors" href="#">Services</a>
+<a class="hover:text-rosegold transition-colors" href="#">Philosophy</a>
+<a class="hover:text-rosegold transition-colors" href="#">Gallery</a>
+</div>
+<div class="flex-1 text-center">
+<a class="font-display text-4xl tracking-[0.2em] font-light" href="#">AURA</a>
+</div>
+<div class="flex-1 flex justify-end gap-8 text-xs tracking-widest uppercase font-medium">
+<a class="hover:text-rosegold transition-colors" href="#">Membership</a>
+<a class="px-4 py-2 border border-rosegold text-rosegold hover:bg-rosegold hover:text-white transition-all" href="#">Book Now</a>
+</div>
+</nav>
+<!-- END: StickyNavbar -->
+<main>
+<!-- BEGIN: Hero -->
+<section class="relative h-screen flex items-center overflow-hidden bg-charcoal">
+<img alt="Luxury Salon Interior" class="absolute inset-0 w-full h-full object-cover opacity-70" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDS2jMPHnJHoAK5yC6QwsCw6a1EC9FHEkG3-irqtl7vLOLFimEumhivly1PycccLSPCoLZMriDeRaUBm7bgBLHVNBk3fFowpn8KeYsdjYzBFvy85CJg8QBMOOcQ6T1ic6ebDnq1tQoxtaZtVKhDNuxA88Loz1USUh6U7Z70m1Zgpx_OijO22VXK6Dtv05wQVp5OQZMjGE3JmzMSDf8UO5T3ZFtB15GRvV6cONI4hngrbEDWg17MoIORf6PRIrIe_x5SkEYBDClhm-Y"/>
+<div class="absolute inset-0 bg-gradient-to-r from-charcoal/60 to-transparent"></div>
+<div class="relative container mx-auto px-8 z-10">
+<h1 class="font-display text-7xl md:text-[10rem] text-ivory leading-none fade-up" id="hero-title">
+          Elevate Your <br/>
+<span class="font-accent italic ml-20 md:ml-40">Aura.</span>
+</h1>
+<p class="text-ivory/80 text-lg mt-8 max-w-md tracking-wide font-light fade-up">
+          A sensory journey of bespoke beauty and holistic wellness in the heart of the city.
+        </p>
+</div>
+</section>
+<!-- END: Hero -->
+<!-- BEGIN: MarqueeTicker -->
+<section class="bg-rosegold py-3 overflow-hidden border-y border-rosegold/30">
+<div class="marquee-container">
+<div class="marquee-content flex gap-20 items-center text-ivory uppercase tracking-[0.3em] text-sm font-medium">
+<span>Complimentary Glass of Champagne with Every Treatment ✦</span>
+<span>New Spring Rejuvenation Facial Now Available ✦</span>
+<span>AURA Membership: Exclusive Access Awaits ✦</span>
+<span>Complimentary Glass of Champagne with Every Treatment ✦</span>
+<span>New Spring Rejuvenation Facial Now Available ✦</span>
+<span>AURA Membership: Exclusive Access Awaits ✦</span>
+</div>
+</div>
+</section>
+<!-- END: MarqueeTicker -->
+<!-- BEGIN: BrandPhilosophy -->
+<section class="py-32 px-8 container mx-auto bg-ivory">
+<div class="grid md:grid-cols-2 gap-20 items-center">
+<div class="fade-up">
+<img alt="Spa Detail" class="w-full h-[600px] object-cover shadow-2xl" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAzyjwl8Y626WUxUtTsVXmc2PuHHoCBC3SJI5bG_TgzVu5pp8QJ_143wDGTMq2yHo2jMF-odJF88obAVlyl88cvcnzKavFJK-hBvF2Z5lRDcTkGqPHwK5Q1HH-0qQ_sQJAc3g8Rjsv6Wx3iY_qnDyRyHWzOqgwwh67nOsJmfUm9bxMmBq9pwijSgzdOEf9PZl8vk_shX7iu77OJ9WpGzzlR_0gra0sMpzIq2OtRxjAioQV7WpeI42N_0dpfjBb99ZCV7vrgqg31aSo"/>
+</div>
+<div class="fade-up space-y-8">
+<span class="text-rosegold uppercase tracking-widest text-sm font-semibold">The Manifesto</span>
+<h2 class="font-display text-5xl md:text-6xl leading-tight text-charcoal">
+            Beauty is a <span class="font-accent italic">ritual</span>, <br/>
+            not a routine.
+          </h2>
+<div class="w-20 h-px bg-rosegold"></div>
+<p class="text-charcoal/70 text-lg leading-relaxed font-light">
+            At AURA, we believe that self-care is the ultimate form of self-respect. Our sanctuary is designed to transcend the traditional salon experience, offering a curated environment where art, science, and serenity converge.
+          </p>
+<a class="inline-block font-display text-xl border-b border-rosegold pb-1 hover:text-rosegold transition-all" href="#">Discover Our Story</a>
+</div>
+</div>
+</section>
+<!-- END: BrandPhilosophy -->
+<!-- BEGIN: SignatureServices -->
+<section class="py-24 bg-white/50 px-8">
+<div class="container mx-auto">
+<div class="text-center mb-20 fade-up">
+<h2 class="font-display text-5xl mb-4">Signature Services</h2>
+<div class="flex justify-center items-center gap-4 text-rosegold">
+<span class="w-12 h-px bg-rosegold"></span>
+<span class="text-sm tracking-widest uppercase">The Art of Refinement</span>
+<span class="w-12 h-px bg-rosegold"></span>
+</div>
+</div>
+<div class="grid md:grid-cols-3 gap-12">
+<!-- Card 1 -->
+<div class="group cursor-pointer fade-up">
+<div class="aspect-[3/2] overflow-hidden mb-6 relative">
+<img alt="Hairstyling" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC3x90yKoqrs7KzJg4BjyBXn25BsyPYQOKZgJN00owv7a__9_-TQMcWxkvpsdbiFl6LxiGi-vNy05-5BWrbT-5EYMVmEpTfBNFSAGGFTrUXrjKVS3hZ-kxxAMobnofVFsWkUCCclZgVrE06ndePX2O3YgwwfhLwVm6fwVRyko3dzJ1dwQtbJtJBq-lFCetQQsRr9GJKsiHsritdX08IuI_7Sx5jPdBqD3ZlbrQ3ElaLwLWO6_HILryiwrvHPj7SD_2MbnYF_lw4wGI"/>
+<div class="absolute inset-0 bg-charcoal/10 group-hover:bg-transparent transition-all"></div>
+</div>
+<h3 class="font-display text-2xl mb-2">Artisan Hair Sculpting</h3>
+<p class="text-charcoal/60 text-sm mb-4">Precision cuts and bespoke color artistry tailored to your unique profile.</p>
+<span class="text-rosegold text-xs tracking-widest font-bold uppercase group-hover:underline">Explore ✦</span>
+</div>
+<!-- Card 2 -->
+<div class="group cursor-pointer fade-up" style="transition-delay: 0.1s;">
+<div class="aspect-[3/2] overflow-hidden mb-6 relative">
+<img alt="Facial" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCQplqnEDU0Oc8ZIQGPQwX5sidus_FgDilMTsbMjv8Wt1cSKlZ-1FizzaDZq63FxmBn8Bd8eB0Yy27QDVYck89ujaIo2HUJ9j_1CDkdtTYBAsVeo8DX6vEiUR0r-Ava1Q3ASLX0nHMsKnMXD7EhZSLUfijX9lm79rigIVFJUhovSPDSgyKVo7fzK1JMBIgYqU3aa-aFouM231hHxXHsiBMnY3imWwBc_ssHzi-TIgVOW7v6ILKYsdlwb7gjgd6aAfg46dmQ8nQZ1_4"/>
+</div>
+<h3 class="font-display text-2xl mb-2">Molecular Facials</h3>
+<p class="text-charcoal/60 text-sm mb-4">Advanced skin therapy using clinical-grade serums and ancient techniques.</p>
+<span class="text-rosegold text-xs tracking-widest font-bold uppercase group-hover:underline">Explore ✦</span>
+</div>
+<!-- Card 3 -->
+<div class="group cursor-pointer fade-up" style="transition-delay: 0.2s;">
+<div class="aspect-[3/2] overflow-hidden mb-6 relative">
+<img alt="Massage" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDF7C69KMYTJNEtQu913qrARYLlf-DG6m_lqBKZFi8i9Znq0tv6DBjKJS7-xzd60cTouH-76xcOC9EFnAESeHoI55KkVCyE6LYeg7WkIAGQvIkENMjWJLSr3O_v_vrBcpv4YyV0j-1DjxGJGZXLMYrIXKR_VcXHGmLH6leZQ9xbOBiQcSVvFZ_QIqu8JL__TanqsR5YzQb4kHztoy1V1ITVezDinvi2IGitE2jgYc-685L3hucUrFPGzqgI_MM8ECGpBzSRwnnc7IU"/>
+</div>
+<h3 class="font-display text-2xl mb-2">Serenity Body Rituals</h3>
+<p class="text-charcoal/60 text-sm mb-4">Holistic massage therapies designed to realign mind and body.</p>
+<span class="text-rosegold text-xs tracking-widest font-bold uppercase group-hover:underline">Explore ✦</span>
+</div>
+<!-- Repeat similar for 6 cards if needed, keeping 3 for brevity but grid set for 3x2 -->
+<!-- Card 4 -->
+<div class="group cursor-pointer fade-up">
+<div class="aspect-[3/2] overflow-hidden mb-6 relative">
+<img alt="Nail Art" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA67AlgBDU_H7beNzDjCTmaCdmmXWIBQAurcXCsNNN1Vtnv-zW8Q1Bpkc7L8uGblGzyuWVdmb43Fpr2dWo1niRO4p9BkdU6brz5Q7dJk0V92Qu2i0THw9VwOH1ZaPJzOdBbjJVUEAKYYg83v0mKtdV6TcFvT1WUenMo6HK91nHD-tSCZg8gogyho41wAg7rraQI1ttCmTeXdErp3peotH8jtFQXbcry3JbbOV7sWRugavjshZ4oVY_-TfDcjaUKYNmkixQvDlPyPmc"/>
+</div>
+<h3 class="font-display text-2xl mb-2">Luxe Manicure</h3>
+<p class="text-charcoal/60 text-sm mb-4">Exceptional nail care and artistry featuring non-toxic, luxury polishes.</p>
+<span class="text-rosegold text-xs tracking-widest font-bold uppercase group-hover:underline">Explore ✦</span>
+</div>
+<!-- Card 5 -->
+<div class="group cursor-pointer fade-up">
+<div class="aspect-[3/2] overflow-hidden mb-6 relative">
+<img alt="Makeup" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCohT08cyMoE9k_m_MlAhp6FVLHdeYSdpvHlzVHaFPITXuzOhv0PcgEALf87VfRPciHfi6781QmyTD07L26K_UpG0m-BirzEA0SKLW70rTkFxEQqJMz5ZPRCB9EG7ZDUP8I3WJlNq549uhidU8EfoS0IV_19StWj_WR3Hdf5-XPSmZ_H5-U2OLG0BYdKe-FyKumLHD--emJMqj45oH21_Uvvf_TEbySJ6o-j1yi69W2iHn3_bcSFf8ZACR99FtowAAeiMYteHRWN9w"/>
+</div>
+<h3 class="font-display text-2xl mb-2">Event Artistry</h3>
+<p class="text-charcoal/60 text-sm mb-4">Professional makeup services for your most significant moments.</p>
+<span class="text-rosegold text-xs tracking-widest font-bold uppercase group-hover:underline">Explore ✦</span>
+</div>
+<!-- Card 6 -->
+<div class="group cursor-pointer fade-up">
+<div class="aspect-[3/2] overflow-hidden mb-6 relative">
+<img alt="Bridal" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBI7OylmuUW8G7E_076araCO7R6ozGgLyNoMw3yTvIvc2xcyKel3uyb4Rm8dL4ZtieaMgOk8l6UukumhbHE3-2QdxR3jy7_xuG6XyqyRG__fW5KA8MyrCCmrrEcRVnpmoVu1X1EGjmXUjvipz8FAG7jtJ82H2acOgmwLEatxTaFgDPPUX6CswZIDJITbZlZ_vUt9BLRb5QXRWrhI4Iombwg54OuFfGzAcw6rhPaT65JloSDZMbyvuQh34uONJvauJipNWKKin45NPs"/>
+</div>
+<h3 class="font-display text-2xl mb-2">Bridal Suites</h3>
+<p class="text-charcoal/60 text-sm mb-4">Curated bridal packages in our private, luxury dressing suites.</p>
+<span class="text-rosegold text-xs tracking-widest font-bold uppercase group-hover:underline">Explore ✦</span>
+</div>
+</div>
+</div>
+</section>
+<!-- END: SignatureServices -->
+<!-- BEGIN: BeforeAfter -->
+<section class="py-24 px-8 container mx-auto">
+<div class="flex flex-col items-center mb-16 fade-up">
+<h2 class="font-display text-4xl italic mb-4">The Transformation</h2>
+<div class="w-12 h-px bg-rosegold"></div>
+</div>
+<div class="grid md:grid-cols-3 gap-8">
+<div class="space-y-4 fade-up">
+<div class="relative flex overflow-hidden group">
+<div class="w-1/2 pr-0.5 border-r border-rosegold/30"><img alt="Before" class="grayscale" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDl5_uyEH92or5cWvzkD6tXEwPcbsz5KC_Fq5PoV-_rCUgeaS5AnzN26cTrcAKawdOim8dxvCH4LAL4KMmIfUiPNorTKHJExyMtBifrCpoL1zLJQ45B8PtrkOTpAzvvqGYDVNBf-0iXlOq4qraygIIdgJ9PyA7VYl-nwf0Y7ifdF7IWePozk-KX7V6i61jW4Nag9K2oq1OllfE_3ETIE9Bb_i3QJoyDKEIhqggNBvjsHIewtDinlqxqaRcaCYUqeazchd6svNKjQpU"/></div>
+<div class="w-1/2 pl-0.5"><img alt="After" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCqSEII5L8nTm9eNZs-ve1Z0Jsr0Dz9AL65wuiVEvHf8d1AGK_9B6KsK_0jOQCA78gHV9TZ2OPC3s3iNHdZjRBCnVPduaaOE3_2fTiF2DCOBMb98v-ZUsD8FRQxrANMNOfBH2bZ4Vq1Ci0UYnZmC7t9tH7j84R8vjlPLNi7m6PDMS_B-L5LmF6qECsU8giYC3Vy43YCKnNp8dJLSrh3OmKze691MNzxOeZTnFjvltu3xj-pY8drZkM2LILoW9Zqem-d5Zgmys0zrVw"/></div>
+</div>
+<p class="text-center font-accent italic text-rosegold">Balayage Restoration</p>
+</div>
+<div class="space-y-4 fade-up">
+<div class="relative flex overflow-hidden group">
+<div class="w-1/2 pr-0.5 border-r border-rosegold/30"><img alt="Before" class="grayscale" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDTUxG8RCZlWhTSVQABi9iahxN5zYVG7ftdARuZ4o1Pb3sXiPL4fVc1bxoOtty9K-ePqafmx3wnJHuOPfjEcXFrXhuaRQbrgv709ast4kqxqJIEDELUwHCgHBDkgSH5B7gcWp2eW_8v90K_G05s7JgdmR4-Wdlffepnr9z4rux1c6HPHUd9Jq3Jc78nMGTKjG-kK99QUGEk4apHnDMoqbGRfbvAwsxuogLGaIZ332Xt5Dw2GAZ_Ngkr9dak5Y7RPcTnnLrhecKEaTU"/></div>
+<div class="w-1/2 pl-0.5"><img alt="After" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAeBD7hnUEvvNB-7mkAskQa_nMAAyeFBubbhjvYSUxVb5Vff4GCYmYe8m9MjpoCWcyWvBGxyN43xX5sDz2HREYhTVIIZOe-5lRX3fsTHDREk0Bg8t9IbDAUWUwKjjfJL3s3xTPv9_EwYy0cLO1NU3yqTunHZsy6b1QF9d1s0VIvHT0LP5MLEB5Ye_rtzCP2vPnczrhHC_7SLyfofqm_N41Hj-qLaFSdjn6T4VC6CX6lRJvO0RJnyLQzHoqyXxjs-iMIX3ni_KfYHUM"/></div>
+</div>
+<p class="text-center font-accent italic text-rosegold">Glow Facial Results</p>
+</div>
+<div class="space-y-4 fade-up">
+<div class="relative flex overflow-hidden group">
+<div class="w-1/2 pr-0.5 border-r border-rosegold/30"><img alt="Before" class="grayscale" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAbzJjyjtcMDzwe61NVXElJ0OSfA2-Z4z9i_PmzGC13NA0AR6X2twsk93VdukpULtRW-clZ5FZvToPKCvuBV96EE69d2t3oioE6kltJEj7PaQSwPt55WQY_erQsVH_ZfjaG5m8kshMCi8_eRmKQ_uFVP_otlbBBY-xM_T1oS_TXv3gkZACRFJAsqqctOeHelIBzNzYK3dgTcRey6kUz3kyczwP3m2hz7UHAGusgp2EaUnBFXAA5jGpMmgOZUIJiQJqlD0Zi5wh-O2k"/></div>
+<div class="w-1/2 pl-0.5"><img alt="After" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAHlEWmudmrfDuAv2-Ls4mWmk1vJxv6d0Cqv_8eb0Y51jbSFg6BBpQHEEowPujfKgzwnyPro8_vNZlCdMJTDjjQXRgO1Pdj5WcifEvNq6qew0Cc010qhdgtpljwLuflPsSXzVZGl5hqgH4-dAlBlWqwBuJnI_37oF-1xdpEOqimt4XD8FUZ_y9vzYM9_d9mANEp1UW07UOxBKPUObugmr1Ida2A2Qz_X0iiqvzyVpXYHFAcpqJ7PSxjzuhSf11Nzn0VbmxVb3Lln4g"/></div>
+</div>
+<p class="text-center font-accent italic text-rosegold">Bridal Sculpting</p>
+</div>
+</div>
+</section>
+<!-- END: BeforeAfter -->
+<!-- BEGIN: VirtualTourVideo -->
+<section class="relative h-[60vh] flex items-center justify-center overflow-hidden">
+<!-- In a real scenario, this would be a <video> tag with parallax. Placeholder image used for now -->
+<img alt="Spa Ambience" class="absolute inset-0 w-full h-[120%] object-cover -top-20 opacity-90 transition-transform duration-1000" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBCex92usCvf1GTR-QWjIZKZd0nUHcEtpZR6l3Ce-6EF4kVH9VyMehmietCs1CB_hRW4sZ1yj_BJ_YpXXSqk_CoMm7wiRIjDRwN37UYwv0RzAebbAjkWcLWIckUX5xU0je8j_q4HpeAGs4WD9U6cjSngCe0hBUH5PbAHb0lGzNGLTn871lTipJcZqq6JPJdDKGNgHGmTyVYBsclZe8OYQvMJM-GpfZcKPsYrnCMAQWKmGQrCXt3Uf_zJMVDvUmTQRYIsF_eJzdf5U8"/>
+<div class="absolute inset-0 bg-charcoal/30"></div>
+<div class="relative z-10 text-center text-ivory fade-up">
+<h2 class="font-display text-6xl md:text-7xl mb-6">Step Into Your Sanctuary</h2>
+<button class="px-8 py-4 border border-ivory text-sm tracking-widest uppercase hover:bg-ivory hover:text-charcoal transition-all flex items-center gap-4 mx-auto">
+<span>Watch the Film</span>
+<svg class="w-4 h-4" fill="currentColor" viewbox="0 0 20 20"><path d="M4.5 3.5l11 6.5-11 6.5v-13z"></path></svg>
+</button>
+</div>
+</section>
+<!-- END: VirtualTourVideo -->
+<!-- BEGIN: AuraDifference -->
+<section class="py-32 bg-ivory">
+<div class="container mx-auto px-8">
+<div class="grid md:grid-cols-4 gap-16">
+<div class="text-center fade-up">
+<div class="mb-6 flex justify-center"><span class="text-rosegold text-4xl">✧</span></div>
+<h4 class="font-display text-xl mb-4">Premium Products</h4>
+<p class="text-sm text-charcoal/60 leading-relaxed font-light">We exclusively use Oribe, Sisley Paris, and our own organic botanical line.</p>
+</div>
+<div class="text-center fade-up" style="transition-delay: 0.1s;">
+<div class="mb-6 flex justify-center"><span class="text-rosegold text-4xl">✧</span></div>
+<h4 class="font-display text-xl mb-4">Elite Artistry</h4>
+<p class="text-sm text-charcoal/60 leading-relaxed font-light">Our stylists are award-winning educators in the global beauty industry.</p>
+</div>
+<div class="text-center fade-up" style="transition-delay: 0.2s;">
+<div class="mb-6 flex justify-center"><span class="text-rosegold text-4xl">✧</span></div>
+<h4 class="font-display text-xl mb-4">Concierge Service</h4>
+<p class="text-sm text-charcoal/60 leading-relaxed font-light">A personalized journey from the moment you book until you leave.</p>
+</div>
+<div class="text-center fade-up" style="transition-delay: 0.3s;">
+<div class="mb-6 flex justify-center"><span class="text-rosegold text-4xl">✧</span></div>
+<h4 class="font-display text-xl mb-4">Modern Sanctuary</h4>
+<p class="text-sm text-charcoal/60 leading-relaxed font-light">HEPA-filtered air and noise-canceling zones for total immersion.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- END: AuraDifference -->
+<!-- BEGIN: FounderStory -->
+<section class="bg-charcoal text-ivory py-32 overflow-hidden">
+<div class="container mx-auto px-8 grid md:grid-cols-2 gap-20 items-center">
+<div class="relative fade-up">
+<img alt="Sarah Malik" class="w-full grayscale brightness-75 hover:grayscale-0 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC7ckooXFVKt5Ddx7JuHn_dL1S2TrK_7En0gLoK_blZ4clSapBjlNeyrWbWVQGRNzRgmsr5fBZGTWEse7_L7DoakjqPsCvo3rXTPit-t-o2RJZ9h6P0FQDFH6r-lgL1YnZ7iuLJ6iLcAYJS_E19JxV6xTF0DiBFC83jYMdhT9gxRNHqEb5o9O2n4cla78NG86CTVz3eqVHV3ArvaAGU3fBf4T38j1D3Znp9Y7Hb0CI81ryUd6WOSN84HwPMhNwqEhb-Fi_dXG_Jy-U"/>
+<div class="absolute -bottom-10 -right-10 p-12 bg-rosegold/90 backdrop-blur hidden md:block">
+<span class="text-xs uppercase tracking-[0.4em] block mb-4">Founder &amp; Director</span>
+<span class="font-display text-3xl">Sarah Malik</span>
+</div>
+</div>
+<div class="fade-up">
+<span class="text-rosegold text-4xl mb-8 block">“</span>
+<blockquote class="font-display text-4xl md:text-5xl leading-tight mb-12 italic">
+            Beauty is not just about the reflection in the mirror; it’s about the radiance that comes from within when you are truly cared for.
+          </blockquote>
+<p class="text-ivory/60 leading-relaxed font-light max-w-lg mb-8">
+            Sarah Malik founded AURA with a singular vision: to create a space that honors the individual. With over 15 years in luxury hospitality and cosmetology, she brings an editorial eye to every client’s unique needs.
+          </p>
+<a class="px-8 py-4 bg-rosegold text-ivory text-xs tracking-widest uppercase hover:bg-ivory hover:text-rosegold transition-all" href="#">Read Her Philosophy</a>
+</div>
+</div>
+</section>
+<!-- END: FounderStory -->
+<!-- BEGIN: BrandPartners -->
+<section class="py-20 bg-ivory/50 border-y border-rosegold/10">
+<div class="container mx-auto px-8">
+<div class="flex flex-wrap justify-between items-center opacity-40 grayscale gap-12">
+<!-- Logos Placeholder -->
+<span class="font-display text-2xl tracking-widest uppercase">Oribe</span>
+<span class="font-display text-2xl tracking-widest uppercase">Sisley Paris</span>
+<span class="font-display text-2xl tracking-widest uppercase">Balmain Hair</span>
+<span class="font-display text-2xl tracking-widest uppercase">Dyson Pro</span>
+<span class="font-display text-2xl tracking-widest uppercase">La Mer</span>
+</div>
+</div>
+</section>
+<!-- END: BrandPartners -->
+<!-- BEGIN: PhotoGallery -->
+<section class="py-32 px-4 md:px-8">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4 auto-rows-[250px] md:auto-rows-[350px]">
+<div class="md:col-span-2 md:row-span-2 overflow-hidden fade-up"><img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBeq9-7N6cABdEkQmD9Y1RQg46kAP7WRG_6XCl7G2Uv6ulSnoBCk5ygNjWlj2yMFK70-YmiQtppcfKLMFoUyPg0k5LbOcybuev-kmR1ljbkeat43eAd1qvhwQU2X2k41PQ2CxM2fAgIhuQYAdTX5rsR613LWkmPbQsliNafiFMmFqzcQUhzy24bh3InpI29reJUyV-SuUogr3S-oCDoSJZuXCc0X10jBPnPd4cK16oKHiexd_rZvmt7mbKTNNV7mUSOgNSCeN-NQfg"/></div>
+<div class="overflow-hidden fade-up"><img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDGSUsekmbwMZY4fLt_KNFa4ohVJ_ut5oxtqjY2V-236IMBD-BLMd4OQ8xrOGMq4nyojLaF-i3_1B0Iqix8Zr0DBolvBwiLrnQ9RIJAQ7F5-IDb2-ZEWDmuTg1rmnPZ6N3vWmRPPnYFer55E6K2ZqamYpbiFd6HLglTq2VFhMGdDXluCpqj3L3UgEGz4OplpE6CpjUL7-Ry7pU1CsGTlF4mHNvcQO-kuahtF2cAupp0tstjan3l2_HP46DDjAli3xj3j2yiotct5Ak"/></div>
+<div class="md:row-span-2 overflow-hidden fade-up"><img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1th06oVWU4BvAEPLC0LcWoA16wY2fuioevV2ilUUGVYMG9CGvBWbbBXc02_-mcpMc109Uy9qMeI2L9y4o7BuPhBsNSbk4o2iwfSWDbAXpV8OjbhG20cXZW0bGl2gZn7grizaJNR2881vwtnS_C3l0iotfs1QGR0sGFrQsuEER8O3Edpq2z7Jt4-kzfh6EVinAsyne56li7y-Wm-wUW_FS6zwSgnpRUu-E00Z8Fnpai-YzXWo7r-WQpc5TOMujqRO3vyF58zUpSi8"/></div>
+<div class="overflow-hidden fade-up"><img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCV4AEO3KQyHMOif0voD0bEfoF-0gXKEUG6wwWPDBabjJYPN-j-LV7-jrX-aZvKuC1cbKcGnk6qPFpLWE7nR1XGKQWhYUM2zKzhP6wlyUTfrA8kvnZgjyrGhAw-r8naKMHcXxWz8aMhvfaNOGo3FFhfKYKdvMWvkEkut6AgDwlb75cQm4M9OH-7n5kbRjLYWi_10p8CURNTnsfafym1wb0ZdBzI3hZVnTOqCUV9lAcI8WIJtgL-WBUXxly_qcRkCMo_q0usNqfv5PA"/></div>
+<div class="overflow-hidden fade-up"><img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAUWHD9hyIzcjvNH-3c9KnuDJkZv5BuRJLrow8e3N-QZrJMHXfugmOkto9LeJNnqRDpl1_YmqDg6-9ne63mqXI-fZEApnvuEveOxEiHEIV8AoBdW0WfA1kAyrWxEpDlBj-LzsKC6ny5ZhhhveEUdJ17fHPH2RlOoWzVVxhFmf0kNqwxiDNGKBXV0pNjKqqj5tE5NiT6V-EkEi9IEnSq_7j-PitSkMFVQjrfF4BMkk2oLYWITI_uoPwTpx8hwKAmtpx8VBr-pbD-iD8"/></div>
+<div class="md:col-span-2 overflow-hidden fade-up"><img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBuB8D5M1dlaca8TjAxOC1ED7Bt3RFH8DfQpuErUrQVsEUNpZ6vVd7x_Ughz5lDRoEP0dUkuQBX1js0chPTV_IvclWRxPrM4MPPg3rkdHqW8q8AB3e6BIuFhenY3eeIy-m85MAhri-q4k13gsFGIQbqdFUwaGWlg3OIiXnC9Fyqb6yP76mFNF9SuESFmrvSo3TRcknHiAyxTcIFAfLBAOAMIBZkQ3eB6rinpxgl7lEyQx3sH9VUAIyBxv4RZjEaz2U-tZi9MVT7_jw"/></div>
+</div>
+</section>
+<!-- END: PhotoGallery -->
+<!-- BEGIN: SeasonalOffers -->
+<section class="py-24 bg-ivory">
+<div class="container mx-auto px-8 max-w-5xl space-y-8">
+<h2 class="font-display text-4xl text-center mb-16">The Spring Edit</h2>
+<div class="bg-white p-12 border-l-4 border-rosegold flex flex-col md:flex-row justify-between items-center gap-8 shadow-sm fade-up">
+<div>
+<span class="text-rosegold text-xs uppercase tracking-widest font-bold">Limited Time</span>
+<h3 class="font-display text-3xl mt-2">The Golden Glow Package</h3>
+<p class="text-charcoal/60 mt-2 font-light">Custom Balayage, Olaplex Treatment, and Signature Blowout.</p>
+</div>
+<div class="text-right">
+<span class="font-display text-3xl text-rosegold">$345</span>
+<button class="block mt-4 text-xs uppercase tracking-[0.2em] font-bold border-b border-charcoal pb-1">Reserve Now</button>
+</div>
+</div>
+<div class="bg-white p-12 border-l-4 border-rosegold flex flex-col md:flex-row justify-between items-center gap-8 shadow-sm fade-up">
+<div>
+<span class="text-rosegold text-xs uppercase tracking-widest font-bold">New Treatment</span>
+<h3 class="font-display text-3xl mt-2">Detoxifying Marine Ritual</h3>
+<p class="text-charcoal/60 mt-2 font-light">Full body exfoliation and mineral-rich algae wrap.</p>
+</div>
+<div class="text-right">
+<span class="font-display text-3xl text-rosegold">$195</span>
+<button class="block mt-4 text-xs uppercase tracking-[0.2em] font-bold border-b border-charcoal pb-1">Reserve Now</button>
+</div>
+</div>
+<div class="bg-white p-12 border-l-4 border-rosegold flex flex-col md:flex-row justify-between items-center gap-8 shadow-sm fade-up">
+<div>
+<span class="text-rosegold text-xs uppercase tracking-widest font-bold">Special Value</span>
+<h3 class="font-display text-3xl mt-2">Bridal Party Preview</h3>
+<p class="text-charcoal/60 mt-2 font-light">Makeup trial and hair consultation for bride and two maids.</p>
+</div>
+<div class="text-right">
+<span class="font-display text-3xl text-rosegold">$450</span>
+<button class="block mt-4 text-xs uppercase tracking-[0.2em] font-bold border-b border-charcoal pb-1">Reserve Now</button>
+</div>
+</div>
+</div>
+</section>
+<!-- END: SeasonalOffers -->
+<!-- BEGIN: Testimonials -->
+<section class="bg-charcoal py-32 overflow-hidden">
+<div class="container mx-auto px-8">
+<h2 class="font-display text-ivory text-5xl text-center mb-20 fade-up">Client Memoirs</h2>
+<div class="flex gap-12 overflow-x-auto pb-12 no-scrollbar">
+<!-- Testimonial 1 -->
+<div class="min-w-[400px] bg-white/5 p-12 backdrop-blur-sm border border-white/10 fade-up">
+<div class="flex gap-1 text-rosegold mb-6">★★★★★</div>
+<p class="font-accent italic text-xl text-ivory/90 leading-relaxed mb-8">
+              "The most transformative salon experience I've had in a decade. AURA is truly in a league of its own."
+            </p>
+<div class="flex items-center gap-4">
+<div class="w-10 h-px bg-rosegold"></div>
+<span class="text-xs uppercase tracking-widest text-ivory/60">Elena Vanderbilt</span>
+</div>
+</div>
+<!-- Testimonial 2 -->
+<div class="min-w-[400px] bg-white/5 p-12 backdrop-blur-sm border border-white/10 fade-up">
+<div class="flex gap-1 text-rosegold mb-6">★★★★★</div>
+<p class="font-accent italic text-xl text-ivory/90 leading-relaxed mb-8">
+              "The attention to detail is breathtaking. From the champagne to the scalp massage, everything is perfect."
+            </p>
+<div class="flex items-center gap-4">
+<div class="w-10 h-px bg-rosegold"></div>
+<span class="text-xs uppercase tracking-widest text-ivory/60">James Sterling</span>
+</div>
+</div>
+<!-- Testimonial 3 -->
+<div class="min-w-[400px] bg-white/5 p-12 backdrop-blur-sm border border-white/10 fade-up">
+<div class="flex gap-1 text-rosegold mb-6">★★★★★</div>
+<p class="font-accent italic text-xl text-ivory/90 leading-relaxed mb-8">
+              "Sarah Malik's team are true artists. My color has never looked more natural or felt healthier."
+            </p>
+<div class="flex items-center gap-4">
+<div class="w-10 h-px bg-rosegold"></div>
+<span class="text-xs uppercase tracking-widest text-ivory/60">Clara Monclair</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- END: Testimonials -->
+<!-- BEGIN: Membership -->
+<section class="py-32 bg-ivory">
+<div class="container mx-auto px-8">
+<div class="text-center mb-20 fade-up">
+<h2 class="font-display text-5xl mb-4">AURA Collective</h2>
+<p class="text-charcoal/60 font-light tracking-widest uppercase text-xs">Curated Memberships for the Discerning</p>
+</div>
+<div class="grid md:grid-cols-3 gap-8 items-end">
+<!-- Tier 1 -->
+<div class="p-12 border border-rosegold/20 bg-white text-center space-y-8 fade-up">
+<h3 class="font-display text-3xl">Rose Tier</h3>
+<div class="text-4xl font-light text-rosegold">$149<span class="text-sm">/mo</span></div>
+<ul class="text-sm space-y-4 text-charcoal/70">
+<li>Monthly Signature Blowout</li>
+<li>10% Off All Retail Products</li>
+<li>Priority Booking</li>
+<li>Complimentary Glass of Bubbly</li>
+</ul>
+<button class="w-full py-4 border border-charcoal text-xs uppercase tracking-widest hover:bg-charcoal hover:text-white transition-all">Select</button>
+</div>
+<!-- Tier 2 (Featured) -->
+<div class="p-16 bg-charcoal text-ivory text-center space-y-8 shadow-2xl relative z-10 fade-up">
+<div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-rosegold px-4 py-1 text-[10px] uppercase tracking-[0.3em] font-bold">Most Coveted</div>
+<h3 class="font-display text-4xl">Gold Tier</h3>
+<div class="text-5xl font-light text-rosegold">$299<span class="text-sm text-ivory/50">/mo</span></div>
+<ul class="text-sm space-y-4 text-ivory/70">
+<li>Monthly Molecular Facial</li>
+<li>Unlimited Priority Blowouts</li>
+<li>15% Off All Retail &amp; Services</li>
+<li>Quarterly VIP Event Invites</li>
+<li>Personal Aura Concierge</li>
+</ul>
+<button class="w-full py-4 bg-rosegold text-white text-xs uppercase tracking-widest hover:bg-ivory hover:text-charcoal transition-all">Join The Collective</button>
+</div>
+<!-- Tier 3 -->
+<div class="p-12 border border-rosegold/20 bg-white text-center space-y-8 fade-up">
+<h3 class="font-display text-3xl">Diamond Tier</h3>
+<div class="text-4xl font-light text-rosegold">$595<span class="text-sm">/mo</span></div>
+<ul class="text-sm space-y-4 text-charcoal/70">
+<li>Bi-Weekly Custom Rituals</li>
+<li>Unlimited Services Access</li>
+<li>Private In-Home Sessions</li>
+<li>Gifting Allowance for Guests</li>
+</ul>
+<button class="w-full py-4 border border-charcoal text-xs uppercase tracking-widest hover:bg-charcoal hover:text-white transition-all">Enquire</button>
+</div>
+</div>
+</div>
+</section>
+<!-- END: Membership -->
+<!-- BEGIN: PressAwards -->
+<section class="py-20 border-y border-rosegold/20">
+<div class="container mx-auto px-8">
+<div class="flex flex-wrap justify-around items-center opacity-30 gap-8 grayscale">
+<span class="font-accent text-3xl italic">VOGUE</span>
+<span class="font-display text-2xl font-bold uppercase tracking-tighter">Bazaar</span>
+<span class="font-serif text-3xl">ELLE</span>
+<span class="font-display text-xl uppercase tracking-widest">Allure Best of Beauty</span>
+<span class="font-accent text-3xl italic">Vanity Fair</span>
+</div>
+</div>
+</section>
+<!-- END: PressAwards -->
+<!-- BEGIN: BookingCTA -->
+<section class="relative h-[80vh] flex items-center justify-center overflow-hidden">
+<img alt="Golden Hour Glow" class="absolute inset-0 w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD3zH9r6g88ZiLUWmAfRQWytYLdinvF7JsB0reh9OhP-rIk3UNML3gPD58K9rWX8Fima-10CdV1_kwRCQfI4cXdzIHKnjre3eTh7Bre0ZqGdWdJmZZ4pzqvz-HwSPOnHXRLQao_BIIcJwGZZeqol1RTtMkvpivFpY0ov6eM9hzOV4EBbSce2j747DKxO7y6AbHl7Q_zUVpe3O5NpLzWwnTO58T7HnpcIJg1m6-1M8xNAgNiBlCWwlEslSMmyrgyesboVrEqd5-OP40"/>
+<div class="absolute inset-0 bg-charcoal/20"></div>
+<div class="relative z-10 text-center text-ivory fade-up">
+<span class="text-xs uppercase tracking-[0.5em] mb-6 block">Your Radiance Awaits</span>
+<h2 class="font-display text-7xl md:text-9xl mb-10">Ready to Glow?</h2>
+<a class="inline-block px-12 py-5 bg-white text-charcoal text-sm tracking-[0.3em] uppercase hover:bg-rosegold hover:text-white transition-all font-bold" href="#">
+          Book Your Ritual
+        </a>
+</div>
+</section>
+<!-- END: BookingCTA -->
+</main>
+<!-- BEGIN: Footer -->
+<footer class="bg-charcoal text-ivory py-24 px-8 border-t border-white/5">
+<div class="container mx-auto">
+<div class="grid md:grid-cols-4 gap-16 mb-20">
+<div class="space-y-8">
+<a class="font-display text-4xl tracking-[0.2em]" href="#">AURA</a>
+<p class="text-ivory/40 text-sm leading-relaxed max-w-xs">
+            The definitive destination for luxury beauty, editorial hairstyling, and clinical skin rejuvenation.
+          </p>
+<div class="flex gap-6 text-rosegold">
+<a class="hover:text-white transition-colors" href="#">IG</a>
+<a class="hover:text-white transition-colors" href="#">FB</a>
+<a class="hover:text-white transition-colors" href="#">LI</a>
+</div>
+</div>
+<div>
+<h5 class="text-rosegold uppercase tracking-widest text-xs font-bold mb-8">Sanctuary</h5>
+<ul class="space-y-4 text-ivory/60 text-sm">
+<li><a class="hover:text-white transition-colors" href="#">Our Philosophy</a></li>
+<li><a class="hover:text-white transition-colors" href="#">The Team</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Photo Gallery</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Careers</a></li>
+</ul>
+</div>
+<div>
+<h5 class="text-rosegold uppercase tracking-widest text-xs font-bold mb-8">Rituals</h5>
+<ul class="space-y-4 text-ivory/60 text-sm">
+<li><a class="hover:text-white transition-colors" href="#">Hair Artistry</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Facial Therapy</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Body Sanctuary</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Bridal Suites</a></li>
+</ul>
+</div>
+<div>
+<h5 class="text-rosegold uppercase tracking-widest text-xs font-bold mb-8">Connect</h5>
+<ul class="space-y-4 text-ivory/60 text-sm">
+<li>124 Madison Avenue, NY</li>
+<li>hello@aurasalon.com</li>
+<li>+1 (212) 555-0198</li>
+<li class="pt-4"><a class="text-rosegold border-b border-rosegold pb-1" href="#">Get Directions</a></li>
+</ul>
+</div>
+</div>
+<div class="pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6 text-[10px] uppercase tracking-widest text-ivory/30">
+<p>© 2024 AURA SALON &amp; SPA. ALL RIGHTS RESERVED.</p>
+<div class="flex gap-8">
+<a href="#">Privacy Policy</a>
+<a href="#">Terms of Service</a>
+</div>
+</div>
+</div>
+</footer>
+<!-- END: Footer -->
+<script data-purpose="scroll-interactions">
+    // Navbar Scroll Effect
+    window.addEventListener('scroll', () => {
+      const nav = document.getElementById('navbar');
+      if (window.scrollY > 50) {
+        nav.classList.add('nav-scrolled', 'shadow-sm');
+        nav.classList.remove('py-6');
+        nav.classList.add('py-4');
+      } else {
+        nav.classList.remove('nav-scrolled', 'shadow-sm');
+        nav.classList.add('py-6');
+        nav.classList.remove('py-4');
+      }
+    });
+
+    // Fade-up Animation Observer
+    const observerOptions = {
+      threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+  </script>
+</body></html>
