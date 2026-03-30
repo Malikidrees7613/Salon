@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Book an Appointment | AURA Salon &amp; Spa</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&amp;family=Jost:wght@300;400;500&amp;family=Playfair+Display:ital,wght@1,400;1,600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            ivory: '#FAF7F2',
+            rosegold: '#C49A7A',
+            charcoal: '#1E1E1E',
+          },
+          fontFamily: {
+            display: ['"Cormorant Garamond"', 'serif'],
+            body: ['"Jost"', 'sans-serif'],
+            accent: ['"Playfair Display"', 'serif'],
+          },
+        }
+      }
+    }
+  </script>
+<style>
+    body {
+        background-color: #FAF7F2;
+        color: #1E1E1E;
+        font-family: "Jost", sans-serif;
+        overflow-x: hidden;
+    }
+
+    .fade-up {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.8s ease-out;
+    }
+    .fade-up.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    .nav-scrolled {
+        background-color: #FAF7F2 !important;
+        border-bottom: 1px solid rgba(196, 154, 122, 0.2);
+    }
+    .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+    }
+    .hide-scrollbar::-webkit-scrollbar { display: none; }
+    .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+</style>
+</head>
+<body class="bg-ivory text-charcoal font-body selection:bg-rosegold selection:text-white">
+
+<!-- BEGIN: StickyNavbar -->
+<nav class="fixed top-0 w-full z-40 transition-all duration-500 py-6 px-8 flex justify-between items-center bg-transparent text-ivory" id="navbar">
+  <div class="flex-1 hidden md:flex gap-8 text-xs tracking-widest uppercase font-medium">
+    <a class="hover:text-rosegold transition-colors" href="index.html">Home</a>
+    <a class="hover:text-rosegold transition-colors" href="services.html">Services</a>
+    <a class="hover:text-rosegold transition-colors" href="gallery.html">Gallery</a>
+  </div>
+  <div class="flex-1 text-center">
+    <a class="font-display text-4xl tracking-[0.2em] font-light" href="index.html">AURA</a>
+  </div>
+  <div class="flex-1 flex justify-end gap-8 text-xs tracking-widest uppercase font-medium">
+    <a class="hover:text-rosegold transition-colors" href="#">Membership</a>
+    <a class="px-4 py-2 border border-rosegold text-rosegold hover:bg-rosegold hover:text-white transition-all" href="services.html">Book Now</a>
+  </div>
+</nav>
+<!-- END: StickyNavbar -->
+
+<main class="min-h-screen">
+<!-- Hero Section -->
+<section class="relative h-[60vh] md:h-[70vh] flex flex-col items-center justify-center text-center overflow-hidden">
+<img class="absolute inset-0 w-full h-full object-cover object-center" src="images/spa_facial.png" alt="Spa Facial"/>
+<div class="absolute inset-0 bg-charcoal/40"></div>
+<div class="relative z-10 w-full max-w-4xl mx-auto px-8 flex flex-col items-center">
+<p class="font-body tracking-widest text-xs uppercase text-rosegold font-bold mb-6 fade-up pt-12">BOOK AN APPOINTMENT</p>
+<h1 class="font-display text-5xl md:text-7xl text-white leading-none mb-8 fade-up">Your Ritual Awaits</h1>
+<div class="w-24 h-px bg-rosegold fade-up"></div>
+</div>
+</section>
+<!-- Booking Stepper (Indicator) -->
+<div id="booking-stepper" class="sticky top-[88px] z-30 transition-all duration-300 border-b border-transparent bg-ivory">
+  <div id="stepper-inner" class="max-w-4xl mx-auto px-8 py-8 md:py-12 flex justify-between items-center fade-up transition-all duration-300">
+    <div class="step-indicator flex flex-col items-center gap-2 group cursor-pointer" data-target="specialist-section">
+      <span class="step-bubble w-10 h-10 rounded-full border border-rosegold flex items-center justify-center text-white font-body font-bold text-sm bg-rosegold transition-colors">01</span>
+      <span class="step-text font-body text-xs tracking-widest uppercase text-rosegold font-bold transition-colors">Specialist</span>
+    </div>
+    <div class="flex-1 h-[1px] bg-rosegold/30 mx-4"></div>
+    <div class="step-indicator flex flex-col items-center gap-2 cursor-pointer" data-target="schedule-section">
+      <span class="step-bubble w-10 h-10 rounded-full border border-rosegold/30 flex items-center justify-center text-charcoal/40 font-body font-bold text-sm transition-colors">02</span>
+      <span class="step-text font-body text-xs tracking-widest uppercase text-charcoal/40 font-bold transition-colors">Schedule</span>
+    </div>
+    <div class="flex-1 h-[1px] bg-rosegold/30 mx-4 hidden md:block"></div>
+    <div class="step-indicator flex-col items-center gap-2 cursor-pointer hidden md:flex" data-target="confirmation-section">
+      <span class="step-bubble w-10 h-10 rounded-full border border-rosegold/30 flex items-center justify-center text-charcoal/40 font-body font-bold text-sm transition-colors">03</span>
+      <span class="step-text font-body text-xs tracking-widest uppercase text-charcoal/40 font-bold transition-colors">Confirm</span>
+    </div>
+  </div>
+</div>
+<!-- 2. CHOOSE YOUR SPECIALIST -->
+<section id="specialist-section" class="bg-white py-32">
+<div class="max-w-7xl mx-auto px-8 text-center">
+<h2 class="font-display text-[52px] text-charcoal mb-16 fade-up">The Artisans</h2>
+<div class="flex flex-wrap justify-center gap-12 lg:gap-24">
+<div class="artisan-card group cursor-pointer fade-up" data-artisan="Elena Vance">
+<div class="w-48 h-48 rounded-full overflow-hidden mb-6 border border-rosegold/20 p-2 group-hover:border-rosegold transition-colors">
+<img class="w-full h-full object-cover rounded-full transition-all duration-500" data-alt="portrait of a professional aesthetician with a serene expression and minimalist attire" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWpfVCVQ1qdENdpAklKrIdOc_-i6FkquFwor1EStUXVA8vog7lt6rRPxhqiwpr9FQ2dX5UfzZ17fboOondIa4fUKWI8HZWZpU4aboIOQKkdDC2EW__8vPWH9vioxtcaHAHe7jkw3TTllPCYXpjmdKFV06RkXAAjAoJVCom0EpLIW2vpoSp67pdb0ntZ1dkaoWpRrv_JdmWxkZYZ7S8qAmYT_VZkB7Ws_s5yuxY-JLkHLHuIPOD2RLFHyn28DEd5mRBL_YLNIuyb1w"/>
+</div>
+<h4 class="font-display text-2xl text-charcoal">Elena Vance</h4>
+<p class="font-body text-xs tracking-widest uppercase text-rosegold mt-1 font-bold">Lead Stylist</p>
+</div>
+<div class="artisan-card group cursor-pointer fade-up" style="transition-delay: 0.1s;" data-artisan="Julian Thorne">
+<div class="w-48 h-48 rounded-full overflow-hidden mb-6 border border-rosegold/20 p-2 group-hover:border-rosegold transition-colors">
+<img class="w-full h-full object-cover rounded-full transition-all duration-500" data-alt="portrait of a male spa specialist in a clean white uniform with soft lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1t-xGlUYPcxcxy1whDC6MYCEIP06HlBSjlj6JYS35oUnty_Vbg5OlXoQp2fch1VRDAmDtSNZxhI000QlVhYLA9jedgAeyiNlr09-RLe4Im2_vIcn3E_vjVUicyitFDJGNog5KE3o8-d0Bc8MkJM_VBItH6ZVVVoP-GohmMRuE2bseIYtPr6KEdQdusvzZy2g1-LGFSzcpTV5-nOdNIbDckmN6CmUiG23njGqi3SpbTLaTfKKi8IBVZEgxzjNcYcFI_psTQO4K7MU"/>
+</div>
+<h4 class="font-display text-2xl text-charcoal">Julian Thorne</h4>
+<p class="font-body text-xs tracking-widest uppercase text-rosegold mt-1 font-bold">Facial Specialist</p>
+</div>
+<div class="artisan-card group cursor-pointer fade-up" style="transition-delay: 0.2s;" data-artisan="Sienna Moon">
+<div class="w-48 h-48 rounded-full overflow-hidden mb-6 border border-rosegold/20 p-2 group-hover:border-rosegold transition-colors">
+<img class="w-full h-full object-cover rounded-full transition-all duration-500" data-alt="professional woman specialist looking at camera in a high end spa environment" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAojx1VsFXcWRREGpUTs2w1wVzUfe67sAqv3TG0RjQDx2SJ4eZ9LD6FxNUPWtION5Q7-gWQ3-TA60Z_hoR5_R8ZLCKQZEReXW6kTDiNEHsrXEahUGI3LgAK_kNcTN1Dui6RIfvlpc4Y7uCkNwf9kKmETZYKrC4KWGxrwlnCWfYf9Jnngt7VNZ5HaQt2qY1y2_SlMl4aaA4K-HpWOwxH2zOxqDhRIsSEpgXwPEXDK77l_6xqwZFAMkGrrRdNnbMOznKq96yNSWWj_oI"/>
+</div>
+<h4 class="font-display text-2xl text-charcoal">Sienna Moon</h4>
+<p class="font-body text-xs tracking-widest uppercase text-rosegold mt-1 font-bold">Wellness Expert</p>
+</div>
+<div class="artisan-card group cursor-pointer fade-up" style="transition-delay: 0.3s;" data-artisan="Marcus Reed">
+<div class="w-48 h-48 rounded-full overflow-hidden mb-6 border border-rosegold/20 p-2 group-hover:border-rosegold transition-colors">
+<img class="w-full h-full object-cover rounded-full transition-all duration-500" data-alt="portrait of a creative director at a salon with sophisticated style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAaR4mqAKNb9dYHdHMVv6ibrAYES6hsfPPko02F9FrwP6eGKK5PernzjGwvTZgpJHCmiNzwcPlNjEIlA0RDnYeyt3a848F9k2VSYGpDwIGc2LdfkcbVQHdrM7DgFE-I2QH_aT22OEXJ2nQKUpGCnC7V_IlLOQhszMVjElHbwFcdJ94E7eZM4jpZ9vOEC3ZdChkWhOKFol_nRmh6K26rGmF2mGAEzh5iK1dNgFXW0jvrhRz1sNohJU0AVjYoHQAMWRamaD2UItekrmQ"/>
+</div>
+<h4 class="font-display text-2xl text-charcoal">Marcus Reed</h4>
+<p class="font-body text-xs tracking-widest uppercase text-rosegold mt-1 font-bold">Master Colorist</p>
+</div>
+</div>
+</div>
+</section>
+<!-- 3. DATE & TIME -->
+<section id="schedule-section" class="max-w-7xl mx-auto px-8 py-32 grid lg:grid-cols-2 gap-24 items-start">
+<div class="fade-up">
+<h2 class="font-display text-[52px] text-charcoal mb-12">Timing</h2>
+<div class="bg-white p-12 border border-rosegold/20 shadow-sm">
+<div class="flex justify-between items-center mb-10">
+<span id="calendar-month-year" class="font-accent text-2xl italic">October 2024</span>
+<div class="flex gap-4">
+<span id="calendar-prev" class="material-symbols-outlined cursor-pointer hover:text-rosegold transition-colors">chevron_left</span>
+<span id="calendar-next" class="material-symbols-outlined cursor-pointer hover:text-rosegold transition-colors">chevron_right</span>
+</div>
+</div>
+<div class="grid grid-cols-7 gap-4 text-center mb-4">
+<div class="font-body text-xs tracking-widest text-charcoal/40">SU</div>
+<div class="font-body text-xs tracking-widest text-charcoal/40">MO</div>
+<div class="font-body text-xs tracking-widest text-charcoal/40">TU</div>
+<div class="font-body text-xs tracking-widest text-charcoal/40">WE</div>
+<div class="font-body text-xs tracking-widest text-charcoal/40">TH</div>
+<div class="font-body text-xs tracking-widest text-charcoal/40">FR</div>
+<div class="font-body text-xs tracking-widest text-charcoal/40">SA</div>
+</div>
+<div id="calendar-grid" class="grid grid-cols-7 gap-y-2 gap-x-2 text-center mb-8">
+<!-- Dynamic dates will be injected here via JS -->
+</div>
+</div>
+</div>
+<div class="pt-8 fade-up" style="transition-delay: 0.1s;">
+<p class="font-body text-xs tracking-widest uppercase font-bold text-rosegold mb-6">AVAILABLE SLOTS</p>
+<div class="grid grid-cols-2 md:grid-cols-3 gap-4" id="time-slots-container">
+<button class="time-btn py-4 border border-rosegold/30 font-body text-xs tracking-widest uppercase hover:bg-rosegold hover:text-white hover:border-rosegold transition-all active:scale-95" data-time="09:00 AM">09:00 AM</button>
+<button class="time-btn py-4 border border-rosegold/30 font-body text-xs tracking-widest uppercase hover:bg-rosegold hover:text-white hover:border-rosegold transition-all active:scale-95" data-time="10:30 AM">10:30 AM</button>
+<button class="time-btn py-4 border border-rosegold/30 font-body text-xs tracking-widest uppercase hover:bg-rosegold hover:text-white hover:border-rosegold transition-all active:scale-95" data-time="12:00 PM">12:00 PM</button>
+<button class="time-btn py-4 border border-rosegold/30 font-body text-xs tracking-widest uppercase hover:bg-rosegold hover:text-white hover:border-rosegold transition-all active:scale-95" data-time="01:30 PM">01:30 PM</button>
+<button class="time-btn py-4 border border-rosegold/30 font-body text-xs tracking-widest uppercase hover:bg-rosegold hover:text-white hover:border-rosegold transition-all active:scale-95" data-time="03:00 PM">03:00 PM</button>
+<button class="time-btn py-4 border border-rosegold/30 font-body text-xs tracking-widest uppercase hover:bg-rosegold hover:text-white hover:border-rosegold transition-all active:scale-95" data-time="04:30 PM">04:30 PM</button>
+</div>
+<div class="mt-20 p-8 border-l-2 border-rosegold bg-white">
+<p class="font-display text-2xl italic mb-2">Note from AURA</p>
+<p class="text-sm text-charcoal/60 leading-relaxed font-light">Please arrive 15 minutes prior to your appointment to enjoy our botanical lounge and welcome ritual.</p>
+</div>
+</div>
+</section>
+<!-- 4. SUMMARY & CONTACT -->
+<section id="confirmation-section" class="max-w-7xl mx-auto px-8 py-32 grid lg:grid-cols-2 gap-32 border-t border-rosegold/20">
+<div class="space-y-12 fade-up">
+<h2 class="font-display text-[52px] text-charcoal">Your Selection</h2>
+<div class="space-y-8">
+<div class="flex justify-between items-start pb-6 border-b border-rosegold/10">
+<div class="w-full">
+<p class="font-body text-xs tracking-widest uppercase text-charcoal/60 mb-3 font-bold">RITUAL SUMMARY</p>
+<div id="summary-services-list" class="space-y-2">
+  <h5 class="font-accent text-2xl italic text-charcoal/50">None Selected</h5>
+  <a href="services.html" class="text-xs font-body tracking-wider text-rosegold underline uppercase mt-2 block">Choose from Menu</a>
+</div>
+</div>
+</div>
+<div class="flex justify-between items-baseline pb-6 border-b border-rosegold/10">
+<div>
+<p class="font-body text-xs tracking-widest uppercase text-charcoal/60 mb-1 font-bold">ARTISAN</p>
+<h5 id="summary-artisan" class="font-accent text-2xl italic text-charcoal">None Selected</h5>
+</div>
+</div>
+<div class="flex justify-between items-baseline pb-6 border-b border-rosegold/10">
+<div>
+<p class="font-body text-xs tracking-widest uppercase text-charcoal/60 mb-1 font-bold">SCHEDULE</p>
+<h5 id="summary-schedule" class="font-accent text-2xl italic text-charcoal">None Selected</h5>
+</div>
+</div>
+<div class="flex justify-between items-center pt-4">
+<span class="font-body text-sm tracking-widest uppercase font-bold text-charcoal">Total Investment</span>
+<span id="summary-total" class="font-display text-3xl text-rosegold">$0.00</span>
+</div>
+</div>
+<div class="relative w-full h-48 rounded-xl overflow-hidden mt-12">
+<img class="w-full h-full object-cover" data-alt="wide shot of luxury spa pool with soft blue water and stone walls" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCUpQZYkdD3GokPgFy7YSX1Ng8VcP2MWh3JIJfFd9-IohHJXQ_-YITZ-Opyn7U_ZelO-QLEdZgXmAvlbpsdIcZJlVE5ZIhzwa1kiS-BheizMC-6-5OjZapciEBaWJgUoHvOksrtwmkwvwUFr20NseTEpIX8PQHVsuXu91C7hFV7UzXL3hwHie3LuW2mXFSleoLNaQgbT21sMJ3Ldqhe19abevhluJ0Q5SDE2i8hXQ1h7qg7NoLBRkCEvRgM-KguM44rvfkkat3bxVI"/>
+<div class="absolute inset-0 flex items-center justify-center bg-charcoal/30">
+<p class="font-body text-xs tracking-widest uppercase text-white font-bold tracking-[0.2em] drop-shadow-md">Step into serenity</p>
+</div>
+</div>
+</div>
+<div class="bg-white p-12 lg:p-20 shadow-xl border border-rosegold/10 fade-up" style="transition-delay: 0.1s;">
+<h3 class="font-display text-3xl mb-12 text-charcoal">Confirm Your Details</h3>
+<form id="booking-form" class="space-y-10">
+<div class="relative">
+<label class="font-body text-xs tracking-widest uppercase text-rosegold block mb-2 font-bold">FULL NAME</label>
+<input id="booking-name" class="w-full bg-transparent border-0 border-b border-charcoal/20 focus:ring-0 focus:border-rosegold px-0 py-2 text-charcoal font-body" placeholder="e.g. Julianne Moore" type="text" required/>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+<div class="relative">
+<label class="font-body text-xs tracking-widest uppercase text-rosegold block mb-2 font-bold">EMAIL ADDRESS</label>
+<input class="w-full bg-transparent border-0 border-b border-charcoal/20 focus:ring-0 focus:border-rosegold px-0 py-2 text-charcoal font-body" placeholder="name@luxury.com" type="email" required/>
+</div>
+<div class="relative">
+<label class="font-body text-xs tracking-widest uppercase text-rosegold block mb-2 font-bold">PHONE NUMBER</label>
+<input class="w-full bg-transparent border-0 border-b border-charcoal/20 focus:ring-0 focus:border-rosegold px-0 py-2 text-charcoal font-body" placeholder="+1 (555) 000-0000" type="tel"/>
+</div>
+</div>
+<div class="relative">
+<label class="font-body text-xs tracking-widest uppercase text-rosegold block mb-2 font-bold">SPECIAL NOTES</label>
+<textarea class="w-full bg-transparent border-0 border-b border-charcoal/20 focus:ring-0 focus:border-rosegold px-0 py-2 text-charcoal font-body resize-none" placeholder="Any preferences or requirements..." rows="3"></textarea>
+</div>
+<button class="w-full py-6 bg-rosegold text-white font-body tracking-[0.3em] uppercase text-xs hover:bg-charcoal transition-all shadow-xl shadow-rosegold/20 flex items-center justify-center gap-4 group font-bold mt-8" type="submit">
+                        Confirm Appointment
+                        <span class="material-symbols-outlined text-sm group-hover:translate-x-2 transition-transform">arrow_forward</span>
+</button>
+<p class="text-[10px] text-center text-charcoal/40 tracking-wider uppercase">By confirming, you agree to our 24-hour cancellation policy.</p>
+</form>
+
+<div id="booking-success" class="hidden text-center py-12 flex flex-col items-center fade-up mt-8">
+    <span class="material-symbols-outlined text-6xl text-rosegold mb-6">check_circle</span>
+    <h3 class="font-display text-4xl text-charcoal mb-4">You're All Set</h3>
+    <p class="font-body text-charcoal/60 mb-8 max-w-xs mx-auto">Your ritual awaits. A confirmation has been sent to your email.</p>
+    <div class="px-8 py-6 bg-charcoal text-ivory inline-block rounded-xl shadow-xl shadow-charcoal/20 w-full max-w-sm border border-rosegold/20">
+        <p class="font-body text-xs tracking-widest uppercase text-ivory/60 mb-2 font-bold">Confirmation Number</p>
+        <p id="confirmation-number" class="font-accent text-3xl tracking-widest text-rosegold italic"></p>
+    </div>
+    <button id="book-another" class="mt-12 py-4 px-8 border-b border-rosegold font-body text-xs tracking-widest uppercase hover:text-rosegold transition-colors text-charcoal font-bold">
+        Book Another Session
+    </button>
+</div>
+</div>
+</section>
+</main>
+<!-- BEGIN: Footer -->
+<footer class="bg-charcoal text-ivory py-24 px-8 border-t border-white/5">
+<div class="container mx-auto">
+<div class="grid md:grid-cols-4 gap-16 mb-20">
+<div class="space-y-8">
+<a class="font-display text-4xl tracking-[0.2em]" href="index.html">AURA</a>
+<p class="text-ivory/40 text-sm leading-relaxed max-w-xs">
+            The definitive destination for luxury beauty, editorial hairstyling, and clinical skin rejuvenation.
+          </p>
+<div class="flex gap-6 text-rosegold">
+<a class="hover:text-white transition-colors" href="#">IG</a>
+<a class="hover:text-white transition-colors" href="#">FB</a>
+<a class="hover:text-white transition-colors" href="#">LI</a>
+</div>
+</div>
+<div>
+<h5 class="text-rosegold uppercase tracking-widest text-xs font-bold mb-8">Sanctuary</h5>
+<ul class="space-y-4 text-ivory/60 text-sm">
+          <li><a class="hover:text-white transition-colors" href="index.html">Home</a></li>
+<li><a class="hover:text-white transition-colors" href="#">The Team</a></li>
+<li><a class="hover:text-white transition-colors" href="gallery.html">Photo Gallery</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Careers</a></li>
+</ul>
+</div>
+<div>
+<h5 class="text-rosegold uppercase tracking-widest text-xs font-bold mb-8">Rituals</h5>
+<ul class="space-y-4 text-ivory/60 text-sm">
+<li><a class="hover:text-white transition-colors" href="services.html">Hair Artistry</a></li>
+<li><a class="hover:text-white transition-colors" href="services.html">Facial Therapy</a></li>
+<li><a class="hover:text-white transition-colors" href="services.html">Body Sanctuary</a></li>
+<li><a class="hover:text-white transition-colors" href="services.html">Bridal Suites</a></li>
+</ul>
+</div>
+<div>
+<h5 class="text-rosegold uppercase tracking-widest text-xs font-bold mb-8">Connect</h5>
+<ul class="space-y-4 text-ivory/60 text-sm">
+<li>124 Madison Avenue, NY</li>
+<li>hello@aurasalon.com</li>
+<li>+1 (212) 555-0198</li>
+<li class="pt-4"><a class="text-rosegold border-b border-rosegold pb-1" href="#">Get Directions</a></li>
+</ul>
+</div>
+</div>
+<div class="pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6 text-[10px] uppercase tracking-widest text-ivory/30">
+<p>© 2024 AURA SALON &amp; SPA. ALL RIGHTS RESERVED.</p>
+<div class="flex gap-8">
+<a href="#">Privacy Policy</a>
+<a href="#">Terms of Service</a>
+</div>
+</div>
+</div>
+</footer>
+<!-- END: Footer -->
+
+<script data-purpose="scroll-interactions">
+    // Navbar Scroll Effect
+    window.addEventListener('scroll', () => {
+      const nav = document.getElementById('navbar');
+      if (window.scrollY > 50) {
+        nav.classList.add('nav-scrolled', 'shadow-sm', 'text-charcoal');
+        nav.classList.remove('py-6', 'text-ivory');
+        nav.classList.add('py-4');
+      } else {
+        nav.classList.remove('nav-scrolled', 'shadow-sm', 'text-charcoal');
+        nav.classList.add('py-6', 'text-ivory');
+        nav.classList.remove('py-4');
+      }
+    });
+
+    // Fade-up Animation Observer
+    const observerOptions = {
+      threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+  </script>
+<script src="booking.js"></script>
+</body></html>

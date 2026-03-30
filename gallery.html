@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Aura Gallery | AURA Salon &amp; Spa</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&amp;family=Jost:wght@300;400;500&amp;family=Playfair+Display:ital,wght@1,400;1,600&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            ivory: '#FAF7F2',
+            rosegold: '#C49A7A',
+            charcoal: '#1E1E1E',
+          },
+          fontFamily: {
+            display: ['"Cormorant Garamond"', 'serif'],
+            body: ['"Jost"', 'sans-serif'],
+            accent: ['"Playfair Display"', 'serif'],
+          },
+        }
+      }
+    }
+  </script>
+<!-- Custom Styles -->
+<style data-purpose="layout">
+  body {
+    background-color: #FAF7F2;
+    color: #1E1E1E;
+    font-family: "Jost", sans-serif;
+    overflow-x: hidden;
+  }
+  .grain-texture {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    pointer-events: none;
+    z-index: 50;
+    opacity: 0.03;
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuCccV3CIpwATfwIMsxALKf7wa09CEZS3nLqMEjghTeDIcS0IVfN7YFjFfI8km7K51H39KdZyW0wrZ9Y7Pj0klGOEH0v7EV3HvngL8tMked4-HCAYVi0KekO28iuq0UfeNEyoLAPzjWGudGFsEMPTKfmE9bxdtXuXEEnMjXB2RbZXShuk3J0UdgoMZWFB2n8rZEH2bXG2FUXMzJCLocNuY2OFTWbIRkLlmpNkdywYHYkuB5uzcEej1plos6NRYm4rALf8txPmvGpQMw);
+  }
+  .fade-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+  }
+  .fade-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .nav-scrolled {
+    background-color: #FAF7F2 !important;
+    border-bottom: 1px solid rgba(196, 154, 122, 0.2);
+  }
+  .masonry-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 2rem;
+  }
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+</style>
+</head>
+<body>
+<div class="grain-texture"></div>
+
+<!-- BEGIN: StickyNavbar -->
+<nav class="fixed top-0 w-full z-40 transition-all duration-500 py-6 px-8 flex justify-between items-center bg-transparent text-ivory" id="navbar">
+  <div class="flex-1 hidden md:flex gap-8 text-xs tracking-widest uppercase font-medium">
+    <a class="hover:text-rosegold transition-colors" href="index.html">Home</a>
+    <a class="hover:text-rosegold transition-colors" href="services.html">Services</a>
+    <a class="text-rosegold" href="gallery.html">Gallery</a>
+  </div>
+  <div class="flex-1 text-center">
+    <a class="font-display text-4xl tracking-[0.2em] font-light" href="index.html">AURA</a>
+  </div>
+  <div class="flex-1 flex justify-end gap-8 text-xs tracking-widest uppercase font-medium">
+    <a class="hover:text-rosegold transition-colors" href="#">Membership</a>
+    <a class="px-4 py-2 border border-rosegold text-rosegold hover:bg-rosegold hover:text-white transition-all" href="services.html">Book Now</a>
+  </div>
+</nav>
+<!-- END: StickyNavbar -->
+
+<main>
+<!-- BEGIN: Hero -->
+<section class="relative h-screen flex items-center overflow-hidden bg-charcoal">
+  <img alt="Aura Gallery Hero — serene luxury salon interior with warm lighting" class="absolute inset-0 w-full h-full object-cover opacity-70" src="images/salon_interior.png"/>
+  <div class="absolute inset-0 bg-gradient-to-r from-charcoal/60 to-transparent"></div>
+  <div class="relative container mx-auto px-8 z-10">
+    <span class="block text-rosegold uppercase tracking-[0.4em] mb-6 text-xs font-body font-medium">AURA ATELIER</span>
+    <h1 class="font-display text-7xl md:text-[10rem] text-ivory leading-none fade-up" id="gallery-title">
+      The <span class="font-accent italic">Aura</span><br/>Gallery.
+    </h1>
+    <p class="text-ivory/80 text-lg mt-8 max-w-md tracking-wide font-light fade-up">
+      A curated collection of transformative beauty and rituals.
+    </p>
+  </div>
+</section>
+<!-- END: Hero -->
+
+<!-- BEGIN: MarqueeTicker -->
+<section class="bg-rosegold py-3 overflow-hidden border-y border-rosegold/30">
+  <div style="overflow:hidden;white-space:nowrap">
+    <div style="display:inline-block;animation:marquee 20s linear infinite" class="flex gap-20 items-center text-ivory uppercase tracking-[0.3em] text-sm font-medium">
+      <span>Hair Artistry &amp; Color ✦</span>
+      <span>Transformative Skin Rituals ✦</span>
+      <span>Ambiance by Design ✦</span>
+      <span>Hair Artistry &amp; Color ✦</span>
+      <span>Transformative Skin Rituals ✦</span>
+      <span>Ambiance by Design ✦</span>
+    </div>
+  </div>
+</section>
+<style>@keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}</style>
+<!-- END: MarqueeTicker -->
+
+<!-- BEGIN: FilterBar -->
+<section class="py-16 bg-ivory">
+  <div class="container mx-auto px-8">
+    <div class="flex flex-wrap justify-center items-center gap-x-12 gap-y-6">
+      <button class="font-display text-rosegold border-b border-rosegold/60 pb-1 tracking-widest text-sm uppercase" id="filter-all">All</button>
+      <span class="text-rosegold/40 text-xs">✦</span>
+      <button class="font-display text-charcoal/50 hover:text-rosegold transition-colors tracking-widest text-sm uppercase" id="filter-hair">Hair</button>
+      <span class="text-rosegold/40 text-xs">✦</span>
+      <button class="font-display text-charcoal/50 hover:text-rosegold transition-colors tracking-widest text-sm uppercase" id="filter-skin">Skin</button>
+      <span class="text-rosegold/40 text-xs">✦</span>
+      <button class="font-display text-charcoal/50 hover:text-rosegold transition-colors tracking-widest text-sm uppercase" id="filter-rituals">Rituals</button>
+      <span class="text-rosegold/40 text-xs">✦</span>
+      <button class="font-display text-charcoal/50 hover:text-rosegold transition-colors tracking-widest text-sm uppercase" id="filter-ambiance">Ambiance</button>
+    </div>
+  </div>
+</section>
+<!-- END: FilterBar -->
+
+<!-- BEGIN: EditorialMasonryGrid -->
+<section class="pb-24 px-8 md:px-12 max-w-screen-2xl mx-auto">
+  <div class="masonry-grid">
+    <!-- Large Item 1 -->
+    <div class="col-span-12 md:col-span-7 group relative overflow-hidden aspect-[4/5] fade-up">
+      <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Luxury facial treatment with golden light on hydrated skin" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCmBc3zxboMQNUJK11pHzVn5DYX8iVi8V2-HcWZ1GUObZeFn7cvrT0OHAvRARtHQTl0wDiBpzCdDCO7nJAwaXONTLbaaLxGGE7p58bl1Sr2LHVPbMtcEplDdwK1HmwnBno10l40jzqyi7lcn3HY70eKJhEE89l_MphMRFJqhHLvTg5i3Utc8JbrWr8ELZIJbIz_r45HWznqqAW1fUeJYDqooZjUtJeimlqb9m-rsVg2WMyQtiLBXusPBlTQE7cUp0sCCRhTWJlnmzc"/>
+      <div class="absolute inset-0 bg-charcoal/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
+        <span class="font-display text-ivory text-xl tracking-widest uppercase italic">Skin Ritual</span>
+      </div>
+    </div>
+    <!-- Small Item 2 -->
+    <div class="col-span-12 md:col-span-5 group relative overflow-hidden aspect-square mt-12 fade-up">
+      <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Minimalist almond-shaped nail art with gold leaf details" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB5-BCmzEChraJGr8ztLeSYqI0GdjMB60mbLRxERyjPlVFaIlsQdcOf85gokrlNmiarA4ASCsjb35dDkNF9y2YSIKd12jKnj5pioqmsgwyyn8HsF84uR6CSjx25ePSqaynOtTFOy5RCTaW6zi8Kw8-VQaXqwbmC5kC_EoWaDNQvUhb_GNNKApMa8zl2QOXXDQIo63OS6R99t0FXH9A4ZjPsShYd9EVxKVtVPcl4gSDN6Z56Y4imdVd9xASY54JvDt7rh9RdzGjCaIg"/>
+      <div class="absolute inset-0 bg-charcoal/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
+        <span class="font-display text-ivory text-xl tracking-widest uppercase italic">Nail Artistry</span>
+      </div>
+    </div>
+    <!-- Small Item 3 -->
+    <div class="col-span-12 md:col-span-4 group relative overflow-hidden aspect-square -mt-8 fade-up">
+      <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Luxury spa interior with white marble and elegant perfume bottles" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD93CqbviWMdB5VkpGgmj3M_f_i58T5YfqIPCGIfcsYS9SmMNKoCUgRnXXx0S6uYewE7Q53rAi71NFOgqTz7XArcKfxGg5jvY2MoymwTU6o25G43EG6JlfoQm5-iy9lYtCHVcZ7Flj-sAc8HVAdiYFlaxD0dxCkoKU59fMPauJ59T1YLRTndPNxlka7Sdc8JPkGz2swRe2C5-hfIPAcWckCrT-Nuk5g7fWN7n3G5jhE88DO1ijPlg70QWa4A2PH-85zAkanZaTYtjU"/>
+      <div class="absolute inset-0 bg-charcoal/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
+        <span class="font-display text-ivory text-xl tracking-widest uppercase italic">Ambiance</span>
+      </div>
+    </div>
+    <!-- Vertical Item 4 -->
+    <div class="col-span-12 md:col-span-4 group relative overflow-hidden aspect-[3/4] fade-up">
+      <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Flowing honey-blonde hair with soft waves under studio lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDnzRlIsYYWce8TgH9mLqQ-HCD-cjKM5VOeqMZn_V1Hr7ZKYLy8jDxb9h5yX7pghDYK92YcVG1sd1S7CdhTI4M5bGHLw7g0QSL1rawQWRO0HvjCHxolp_QslBvCDxVlI7KIacsrIuw_KY7-yfvEifLX0v4f2WLBYWAlAOj-tkA0MNoKZhJRcDqhS3fdPHAjMIvaspAZqA5GZmkeN55A6b09BxskdP4e46qEtpmf_IAi2nUVH0Qrua2dqT5pMWODOCdniIVpTq4DvQ4"/>
+      <div class="absolute inset-0 bg-charcoal/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
+        <span class="font-display text-ivory text-xl tracking-widest uppercase italic">Hair</span>
+      </div>
+    </div>
+    <!-- Large Item 5 -->
+    <div class="col-span-12 md:col-span-4 group relative overflow-hidden aspect-[4/5] mt-24 fade-up">
+      <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Overhead view of a relaxing head spa with aromatic herbs and warm water" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAAg3hYA0mQuxAhWBHVIoWVN1SeNzaI65Dt5ScWAFSUDLfdLW0k2cwW6vYkACIxgfndqp90rJNRa7quCalQqTh4Vk_z-VjW_4FGOvmnIDOb7ZqGfxnTvAoLfyCCL-40i641-kr3IlFnpk0EJgEMocItx2XzNvSZujwbqpWozbgXcYyV6wWioaGe-c-3xfOY5dgFLs2MuYQhNhSJxZJq3Lgk4gSX-297oOQgOngjlaMD68lIVaapGdFnHlUPLStx1R1apq6hoQVkPWY"/>
+      <div class="absolute inset-0 bg-charcoal/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
+        <span class="font-display text-ivory text-xl tracking-widest uppercase italic">Rituals</span>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- END: EditorialMasonryGrid -->
+
+<!-- BEGIN: QuoteInterstitial -->
+<section class="relative h-[60vh] flex items-center justify-center overflow-hidden">
+  <img alt="Spa Ambience" class="absolute inset-0 w-full h-[120%] object-cover -top-20 opacity-90" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCNye40Namzz1toiP2431mbxsMXmL2A0IQTDklSvbkvNTsWXVuarty4LjmQh-fk7EPJxYHWlDlGY6swg8etRDO5ys2nHesRTuB4qf8UP84TD0HfsNGrETwz72-1alUKJ2GxlGQAaicSUAG49Xl5mTYEVHTu995zdecBJeGbMFKNGSHyYYgE3WJC1z23GxGCBQtGmPG3xa6qp1ZoimTw7rhdL9gRci-WdP7o6b7w2AAKwRYvq3jd7D1nrjpSL6nMRfCy3f2A0MKXEJg"/>
+  <div class="absolute inset-0 bg-charcoal/50"></div>
+  <div class="relative z-10 text-center text-ivory px-6 max-w-4xl fade-up">
+    <div class="w-20 h-px bg-rosegold mx-auto mb-12"></div>
+    <blockquote class="font-display text-5xl md:text-7xl leading-tight italic mb-12">
+      "Beauty is the reflection of the soul's tranquility."
+    </blockquote>
+    <div class="w-20 h-px bg-rosegold mx-auto"></div>
+  </div>
+</section>
+<!-- END: QuoteInterstitial -->
+
+<!-- BEGIN: EditorialSpotlight -->
+<section class="py-32 px-8 container mx-auto bg-ivory">
+  <div class="grid md:grid-cols-2 gap-20 items-center">
+    <div class="group relative overflow-hidden aspect-[16/9] fade-up">
+      <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Elegant lounge area of a luxury spa with plush velvet seating" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCNye40Namzz1toiP2431mbxsMXmL2A0IQTDklSvbkvNTsWXVuarty4LjmQh-fk7EPJxYHWlDlGY6swg8etRDO5ys2nHesRTuB4qf8UP84TD0HfsNGrETwz72-1alUKJ2GxlGQAaicSUAG49Xl5mTYEVHTu995zdecBJeGbMFKNGSHyYYgE3WJC1z23GxGCBQtGmPG3xa6qp1ZoimTw7rhdL9gRci-WdP7o6b7w2AAKwRYvq3jd7D1nrjpSL6nMRfCy3f2A0MKXEJg"/>
+      <div class="absolute inset-0 bg-charcoal/10 group-hover:bg-transparent transition-all"></div>
+    </div>
+    <div class="fade-up space-y-8">
+      <span class="text-rosegold uppercase tracking-widest text-sm font-semibold">The Space</span>
+      <h2 class="font-display text-5xl md:text-6xl leading-tight text-charcoal">
+        Designed for <span class="font-accent italic">Immersion</span>
+      </h2>
+      <div class="w-20 h-px bg-rosegold"></div>
+      <p class="text-charcoal/70 text-lg leading-relaxed font-light">
+        Our space is crafted to be more than a salon; it is a sanctuary where architecture and artistry converge to elevate your daily ritual.
+      </p>
+      <a class="inline-block font-display text-xl border-b border-rosegold pb-1 hover:text-rosegold transition-all" href="services.html">Explore our Services</a>
+    </div>
+  </div>
+</section>
+<!-- END: EditorialSpotlight -->
+
+<!-- BEGIN: InstagramStrip -->
+<section class="py-24 bg-white/50 px-8">
+  <div class="container mx-auto">
+    <div class="text-center mb-20 fade-up">
+      <h2 class="font-display text-5xl mb-4">On Social</h2>
+      <div class="flex justify-center items-center gap-4 text-rosegold">
+        <span class="w-12 h-px bg-rosegold"></span>
+        <a class="text-sm tracking-widest uppercase font-body hover:text-rosegold transition-colors" href="#">Follow @aurasalon</a>
+        <span class="w-12 h-px bg-rosegold"></span>
+      </div>
+    </div>
+    <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-2">
+      <div class="aspect-square relative group overflow-hidden fade-up">
+        <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Luxury skin serum bottle on textured ivory surface" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBod4AUZ6tnlcjTMfC8LpcPh08AVh3ZsM1NNsCAWy5VPd0pAtx9xWLShqWebfmNMMYIH9OETQfkNsEE4p8csqxd-eaEj0vxTJGNkSmwLATuhujNi35NAXNhqkL1FdNtpR-N6_utNuHSWruG6bxIGYEyySWxXmyaPfrFZQcUAtKOsn51SsAnc0k5r43tzjGv4MCfAvfIGNhZNeT-_gojc9vZVIGIwcvhqlehEJouYCN95SCDzYSnh_b0wiwx0v5Qa8HyI4iBDIOx7Hs"/>
+        <div class="absolute inset-0 bg-charcoal/20 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+      </div>
+      <div class="aspect-square relative group overflow-hidden fade-up">
+        <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Stylized portrait with avant-garde hair styling in high contrast light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBhUa9mKrCfqHpQeX_wk9VNAU3bJHBvsEYdrnt98TfM9-W7xnZE_W1xqq6_qGB7W86KEnJgb0D68oM4ypBckn7NUmPQQerZwU56wyag5p9S6gmMAuaIjPNzuJBIt-yX9dE8--DfQpgxx8J8veb4cbFslYPRK-BJXVxR3f0B42d0AXZ_EqJTEPvzsqocUHmCpxR9jQlpPCDGYvKg5dHYdLcMEtJnU6aJbQEMieSMUbDbXqGoa3my5P1JVbR-Z2qEp6vypyLdIhUy6AM"/>
+        <div class="absolute inset-0 bg-charcoal/20 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+      </div>
+      <div class="aspect-square relative group overflow-hidden fade-up">
+        <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Aromatic candles and towels arranged in a zen spa setup" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAdb1MoADCiPtkVVxKBPjq-Aar02k4oXQRGAOQCQA_z2beJQzNEs0Ueec0CrR6AWCw0czOOHdE3YS6puvVICej3BeYXBkKCZGoKpb4aSTHggeQfJV20rUkXAUfqwmUs0KzUZRFjfVgW-DL_mSw70THySrUgDtbkxqHKCDqpd4vpP_eU73_DxyW_v_ycXAdVx3FHtLTPO4Szc0spjZGegDf4iDls6RSfxtf0M8HGeDQ98Tk_gKJx5gumDvuKHpys8Sk7bCusEpI9TWQ"/>
+        <div class="absolute inset-0 bg-charcoal/20 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+      </div>
+      <div class="aspect-square relative group overflow-hidden fade-up">
+        <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Modern salon interior featuring round mirrors and gold accents" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-JvLhpVIMMA0C-WSEIjVOJuxCEU0PtsEvCsY6IgavMgckOqAaq7ClHfFRqTmbZYdz8l0LmJhe17b308JEPBiJnBoCC4uqQKyv55DvVP39qkNt9tBbroEWevErKgckKWeUBh2Tu1mgtjGk5kWFIVY3iqYMKzqbtQ8V2rpEgxrUvSn-HPDX-MuebokJsyBjm9bHYjY6k8S97cTyaIglkqS8l6NIIUmgzndbaNq3bkNzf6P6T-SH8XLLM_AexUabyMunqUreK0J6SiM"/>
+        <div class="absolute inset-0 bg-charcoal/20 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+      </div>
+      <div class="aspect-square relative group overflow-hidden hidden lg:block fade-up">
+        <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Makeup application process on a model" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA08btPpSkSyKSWQ9njkfcXrI9U3sxBgwyaiMh7YruMX6XDm-sh1_uNQR07Vktgs2J2UcO54-RyOv0CG3nXuIZ-W_kJ9_TxjlrAth2tZABDvaI9f5oeGNns14E8VzdwpZ8wniupehEf8Olir0atc5AFQCYhQ09jSAgt544TcNVo-3v8R855aCv-pAI2scO7k7OiazUsnjIL4BDrljT6ecsd45sJ21ht4W2HL9Fi2pZbQxvWC464ZxvdtXsqUeNG94GTXFiIw87jjEc"/>
+        <div class="absolute inset-0 bg-charcoal/20 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+      </div>
+      <div class="aspect-square relative group overflow-hidden hidden lg:block fade-up">
+        <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="A serene woman resting during a spa facial" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCgO_DyBfW1Sbcie0d6a2adCjeg9DC8o5NnY5sye-FCJfFF2rm05_HDTXKIv4bVvcg7_YuNmwKdrcDvmCefsu1m7HCAoNJTjgJ_jz0gbcRyemt5LdJl5ufXrCZNPKONX2mMh2_KjUT8m2VsRykrywgpiY7cPKBEL3kkCscQNDBBZ8_gGwFGDo1ceD7AVoFAm-_dT4alYyO1pz7K4aFRaIr93aBGjEfT6KskZVLalsbLv5jsiHdwDBUXQd69f7KbdsIPoLITNT3zju4"/>
+        <div class="absolute inset-0 bg-charcoal/20 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- END: InstagramStrip -->
+
+<!-- BEGIN: BookingCTA -->
+<section class="relative h-[60vh] flex items-center justify-center overflow-hidden">
+  <img alt="Golden Hour Glow" class="absolute inset-0 w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD3zH9r6g88ZiLUWmAfRQWytYLdinvF7JsB0reh9OhP-rIk3UNML3gPD58K9rWX8Fima-10CdV1_kwRCQfI4cXdzIHKnjre3eTh7Bre0ZqGdWdJmZZ4pzqvz-HwSPOnHXRLQao_BIIcJwGZZeqol1RTtMkvpivFpY0ov6eM9hzOV4EBbSce2j747DKxO7y6AbHl7Q_zUVpe3O5NpLzWwnTO58T7HnpcIJg1m6-1M8xNAgNiBlCWwlEslSMmyrgyesboVrEqd5-OP40"/>
+  <div class="absolute inset-0 bg-charcoal/20"></div>
+  <div class="relative z-10 text-center text-ivory fade-up">
+    <span class="text-xs uppercase tracking-[0.5em] mb-6 block">Your Radiance Awaits</span>
+    <h2 class="font-display text-7xl md:text-9xl mb-10">Ready to Glow?</h2>
+    <a class="inline-block px-12 py-5 bg-white text-charcoal text-sm tracking-[0.3em] uppercase hover:bg-rosegold hover:text-white transition-all font-bold" href="services.html">
+      Book Your Ritual
+    </a>
+  </div>
+</section>
+<!-- END: BookingCTA -->
+</main>
+
+<!-- BEGIN: Footer -->
+<footer class="bg-charcoal text-ivory py-24 px-8 border-t border-white/5">
+  <div class="container mx-auto">
+    <div class="grid md:grid-cols-4 gap-16 mb-20">
+      <div class="space-y-8">
+        <a class="font-display text-4xl tracking-[0.2em]" href="index.html">AURA</a>
+        <p class="text-ivory/40 text-sm leading-relaxed max-w-xs">
+          The definitive destination for luxury beauty, editorial hairstyling, and clinical skin rejuvenation.
+        </p>
+        <div class="flex gap-6 text-rosegold">
+          <a class="hover:text-white transition-colors" href="#">IG</a>
+          <a class="hover:text-white transition-colors" href="#">FB</a>
+          <a class="hover:text-white transition-colors" href="#">LI</a>
+        </div>
+      </div>
+      <div>
+        <h5 class="text-rosegold uppercase tracking-widest text-xs font-bold mb-8">Sanctuary</h5>
+        <ul class="space-y-4 text-ivory/60 text-sm">
+          <li><a class="hover:text-white transition-colors" href="index.html">Home</a></li>
+          <li><a class="hover:text-white transition-colors" href="#">The Team</a></li>
+          <li><a class="hover:text-white transition-colors" href="gallery.html">Photo Gallery</a></li>
+          <li><a class="hover:text-white transition-colors" href="#">Careers</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5 class="text-rosegold uppercase tracking-widest text-xs font-bold mb-8">Rituals</h5>
+        <ul class="space-y-4 text-ivory/60 text-sm">
+          <li><a class="hover:text-white transition-colors" href="services.html">Hair Artistry</a></li>
+          <li><a class="hover:text-white transition-colors" href="services.html">Facial Therapy</a></li>
+          <li><a class="hover:text-white transition-colors" href="services.html">Body Sanctuary</a></li>
+          <li><a class="hover:text-white transition-colors" href="services.html">Bridal Suites</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5 class="text-rosegold uppercase tracking-widest text-xs font-bold mb-8">Connect</h5>
+        <ul class="space-y-4 text-ivory/60 text-sm">
+          <li>124 Madison Avenue, NY</li>
+          <li>hello@aurasalon.com</li>
+          <li>+1 (212) 555-0198</li>
+          <li class="pt-4"><a class="text-rosegold border-b border-rosegold pb-1" href="#">Get Directions</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6 text-[10px] uppercase tracking-widest text-ivory/30">
+      <p>© 2024 AURA SALON &amp; SPA. ALL RIGHTS RESERVED.</p>
+      <div class="flex gap-8">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- END: Footer -->
+
+<script data-purpose="scroll-interactions">
+    // Navbar Scroll Effect
+    window.addEventListener('scroll', () => {
+      const nav = document.getElementById('navbar');
+      if (window.scrollY > 50) {
+        nav.classList.add('nav-scrolled', 'shadow-sm', 'text-charcoal');
+        nav.classList.remove('py-6', 'text-ivory');
+        nav.classList.add('py-4');
+      } else {
+        nav.classList.remove('nav-scrolled', 'shadow-sm', 'text-charcoal');
+        nav.classList.add('py-6', 'text-ivory');
+        nav.classList.remove('py-4');
+      }
+    });
+
+    // Fade-up Animation Observer
+    const observerOptions = { threshold: 0.1 };
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, observerOptions);
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+  </script>
+</body></html>

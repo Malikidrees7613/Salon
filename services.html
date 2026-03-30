@@ -1,348 +1,446 @@
 <!DOCTYPE html>
-
-<html lang="en"><head>
+<html class="scroll-smooth" lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Services &amp; Rituals | AURA ATELIER</title>
+<title>Services &amp; Rituals | AURA Salon &amp; Spa</title>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet" />
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&amp;family=Jost:wght@300;400;500&amp;family=Playfair+Display:ital,wght@1,400;1,600&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&amp;family=Manrope:wght@200;300;400;500&amp;family=Playfair+Display:ital,wght@0,400;1,400;1,700&amp;family=Jost:wght@300;400;500&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script id="tailwind-config">
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {
-            colors: {
-              ivory: '#FAF7F2',
-              rosegold: '#C49A7A',
-              charcoal: '#1E1E1E',
-              "primary-container": "#c49a7a",
-              "secondary-fixed": "#f3ded5",
-              "on-error": "#ffffff",
-              "tertiary-container": "#a4a2a2",
-              "on-primary-container": "#4f321a",
-              "inverse-on-surface": "#f3f0eb",
-              "primary-fixed-dim": "#ebbe9c",
-              "on-tertiary": "#ffffff",
-              "on-tertiary-fixed": "#1b1b1c",
-              "secondary-container": "#f0dbd2",
-              "on-secondary-fixed-variant": "#52443d",
-              "outline-variant": "#d4c3b9",
-              "error-container": "#ffdad6",
-              "surface-variant": "#e5e2dd",
-              "surface-dim": "#dcdad5",
-              "on-secondary": "#ffffff",
-              "surface-container-low": "#f6f3ee",
-              "on-secondary-fixed": "#241914",
-              "inverse-primary": "#ebbe9c",
-              "on-surface": "#1c1c19",
-              "on-background": "#1c1c19",
-              "surface": "#fcf9f4",
-              "on-error-container": "#93000a",
-              "outline": "#82756c",
-              "on-primary-fixed": "#2d1602",
-              "tertiary-fixed-dim": "#c8c6c5",
-              "primary-fixed": "#ffdcc3",
-              "primary": "#7a573b",
-              "surface-container-lowest": "#ffffff",
-              "error": "#ba1a1a",
-              "surface-tint": "#7a573b",
-              "secondary-fixed-dim": "#d6c2ba",
-              "on-primary-fixed-variant": "#5f4026",
-              "on-primary": "#ffffff",
-              "tertiary-fixed": "#e5e2e1",
-              "surface-container-high": "#ebe8e3",
-              "on-secondary-container": "#6f5f58",
-              "surface-container-highest": "#e5e2dd",
-              "tertiary": "#5f5e5e",
-              "on-tertiary-fixed-variant": "#474746",
-              "background": "#fcf9f4",
-              "on-surface-variant": "#50453d",
-              "surface-container": "#f0ede9",
-              "secondary": "#6a5b54",
-              "surface-bright": "#fcf9f4",
-              "on-tertiary-container": "#393939",
-              "inverse-surface": "#31302d"
-            },
-            fontFamily: {
-              display: ['"Cormorant Garamond"', 'serif'],
-              accent: ['"Playfair Display"', 'serif'],
-              "headline": ["Cormorant Garamond", "serif"],
-              "body": ["Jost", "sans-serif"],
-              "label": ["Noto Serif", "serif"],
-              "editorial": ["Playfair Display", "serif"]
-            },
-            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            ivory: '#FAF7F2',
+            rosegold: '#C49A7A',
+            charcoal: '#1E1E1E',
           },
-        },
+          fontFamily: {
+            display: ['"Cormorant Garamond"', 'serif'],
+            body: ['"Jost"', 'sans-serif'],
+            accent: ['"Playfair Display"', 'serif'],
+          },
+        }
       }
-    </script>
-<style>
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
-        }
-        .editorial-italic { font-family: 'Playfair Display', serif; font-style: italic; }
-        .no-line-rule { border: none !important; }
-        .tonal-shift { transition: background-color 0.5s ease; }
-        .nav-scrolled {
-            background-color: #FAF7F2 !important;
-            border-bottom: 1px solid rgba(196, 154, 122, 0.2)
-        }
-    </style>
+    }
+  </script>
+<!-- Custom Styles -->
+<style data-purpose="layout">
+  body {
+    background-color: #FAF7F2;
+    color: #1E1E1E;
+    font-family: "Jost", sans-serif;
+    overflow-x: hidden;
+  }
+  .grain-texture {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    pointer-events: none;
+    z-index: 50;
+    opacity: 0.03;
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuCccV3CIpwATfwIMsxALKf7wa09CEZS3nLqMEjghTeDIcS0IVfN7YFjFfI8km7K51H39KdZyW0wrZ9Y7Pj0klGOEH0v7EV3HvngL8tMked4-HCAYVi0KekO28iuq0UfeNEyoLAPzjWGudGFsEMPTKfmE9bxdtXuXEEnMjXB2RbZXShuk3J0UdgoMZWFB2n8rZEH2bXG2FUXMzJCLocNuY2OFTWbIRkLlmpNkdywYHYkuB5uzcEej1plos6NRYm4rALf8txPmvGpQMw);
+  }
+  .fade-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+  }
+  .fade-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .nav-scrolled {
+    background-color: #FAF7F2 !important;
+    border-bottom: 1px solid rgba(196, 154, 122, 0.2);
+  }
+  .editorial-italic {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+  }
+</style>
 </head>
-<body class="bg-surface text-on-surface font-body selection:bg-primary-fixed selection:text-on-primary-fixed">
+<body>
+<div class="grain-texture"></div>
+
 <!-- BEGIN: StickyNavbar -->
 <nav class="fixed top-0 w-full z-40 transition-all duration-500 py-6 px-8 flex justify-between items-center bg-transparent text-ivory" id="navbar">
-<div class="flex-1 hidden md:flex gap-8 text-xs tracking-widest uppercase font-medium">
-<a class="hover:text-rosegold transition-colors" href="services.html">Services</a>
-<a class="hover:text-rosegold transition-colors" href="#">Philosophy</a>
-<a class="hover:text-rosegold transition-colors" href="#">Gallery</a>
-</div>
-<div class="flex-1 text-center">
-<a class="font-display text-4xl tracking-[0.2em] font-light" href="index.html">AURA</a>
-</div>
-<div class="flex-1 flex justify-end gap-8 text-xs tracking-widest uppercase font-medium">
-<a class="hover:text-rosegold transition-colors" href="#">Membership</a>
-<a class="px-4 py-2 border border-rosegold text-rosegold hover:bg-rosegold hover:text-white transition-all" href="#">Book Now</a>
-</div>
+  <div class="flex-1 hidden md:flex gap-8 text-xs tracking-widest uppercase font-medium">
+    <a class="hover:text-rosegold transition-colors" href="index.html">Home</a>
+    <a class="text-rosegold" href="services.html">Services</a>
+    <a class="hover:text-rosegold transition-colors" href="gallery.html">Gallery</a>
+  </div>
+  <div class="flex-1 text-center">
+    <a class="font-display text-4xl tracking-[0.2em] font-light" href="index.html">AURA</a>
+  </div>
+  <div class="flex-1 flex justify-end gap-8 text-xs tracking-widest uppercase font-medium">
+    <a class="hover:text-rosegold transition-colors" href="#">Membership</a>
+    <a class="px-4 py-2 border border-rosegold text-rosegold hover:bg-rosegold hover:text-white transition-all" href="services.html">Book Now</a>
+  </div>
 </nav>
 <!-- END: StickyNavbar -->
+
 <main>
-<!-- Hero Section -->
-<section class="relative h-[716px] w-full overflow-hidden flex items-center justify-center">
-<div class="absolute inset-0 z-0">
-<img alt="Luxury Spa Interior" class="w-full h-full object-cover" data-alt="Cinematic shot of a luxury minimalist spa treatment room" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDXeheMjQ2khkecDrJ9oGlEWwaXuIvknxsur97hkouSgm7ULatYvbpMQ2MMRifRlu6KYruHbJH3iCQyqYx_d0e4mX8sN5dZLVPjZmPZ0KpnwZOMOzLisg-7KBWM9A_OmLDj3ATe52OXdG-6OkW09IMZWICeJk32L4Deoe3IFOMu-D4XMO9l4onrADL1v-EKbUBbyLKIB9Zka6zm9KL0tHKaNwI1BSZZt4stWyXntuMyxmFDaNHT7hnvAJ_zTOAh6Fdo3RO-ZwCn14s"/>
-<div class="absolute inset-0 bg-stone-900/30"></div>
-</div>
-<div class="relative z-10 text-center px-6 max-w-3xl">
-<h1 class="text-5xl md:text-7xl font-headline text-white mb-6 leading-tight">Our Signature Rituals</h1>
-<p class="text-lg md:text-xl text-white/90 font-light tracking-wide max-w-xl mx-auto">
-                    A curated collection of transformative treatments for the modern woman.
-                </p>
-</div>
+<!-- BEGIN: Hero -->
+<section class="relative h-screen flex items-center overflow-hidden bg-charcoal">
+  <img alt="Luxury Spa Interior" class="absolute inset-0 w-full h-full object-cover opacity-70" src="images/spa_facial.png"/>
+  <div class="absolute inset-0 bg-gradient-to-r from-charcoal/60 to-transparent"></div>
+  <div class="relative container mx-auto px-8 z-10">
+    <span class="block text-rosegold uppercase tracking-[0.4em] mb-6 text-xs font-medium">AURA ATELIER</span>
+    <h1 class="font-display text-7xl md:text-[10rem] text-ivory leading-none fade-up" id="services-title">
+      Our Signature<br/><span class="font-accent italic">Rituals.</span>
+    </h1>
+    <p class="text-ivory/80 text-lg mt-8 max-w-md tracking-wide font-light fade-up">
+      A curated collection of transformative treatments for the modern woman.
+    </p>
+  </div>
 </section>
-<!-- Service Categories -->
+<!-- END: Hero -->
+
+<!-- BEGIN: MarqueeTicker -->
+<section class="bg-rosegold py-3 overflow-hidden border-y border-rosegold/30">
+  <div style="overflow:hidden;white-space:nowrap">
+    <div style="display:inline-block;animation:marquee 20s linear infinite" class="flex gap-20 items-center text-ivory uppercase tracking-[0.3em] text-sm font-medium">
+      <span>Complimentary Glass of Champagne with Every Treatment ✦</span>
+      <span>New Spring Rejuvenation Facial Now Available ✦</span>
+      <span>AURA Membership: Exclusive Access Awaits ✦</span>
+      <span>Complimentary Glass of Champagne with Every Treatment ✦</span>
+      <span>New Spring Rejuvenation Facial Now Available ✦</span>
+      <span>AURA Membership: Exclusive Access Awaits ✦</span>
+    </div>
+  </div>
+</section>
+<style>@keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}</style>
+<!-- END: MarqueeTicker -->
+
+<!-- BEGIN: ServiceCategories -->
 <div class="space-y-32 py-32 px-6 md:px-12 max-w-screen-2xl mx-auto">
-<!-- Category 1: Hair Artistry -->
-<section class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 items-center">
-<div class="lg:col-span-7 overflow-hidden rounded-xl aspect-[4/5] lg:aspect-[16/10]">
-<img alt="Luxury Hair Salon" class="w-full h-full object-cover transition-transform duration-1000 hover:scale-105" data-alt="Professional stylist applying hair color to client in luxury salon" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAYxX3hwLByDSMRbR7QmqccDRfaEvxGT0a0skErulsMotfvKBO05PH9klfbP0HsFVqpAIC7hsjwg3FEcvQN1DjyleRwZPENX_mvT6zUxFuB-70r1A9YG8wcMDQqo1d0Zi4g0NLsTsSTfSrG8Rs5lawAbZxtirsX7uoaBRDr3M1sT7ypPEYgM6vtu2zETgWA8noJ11Jl3UWSKMoRIUhYd5efx-EClbsJmc6hI0buxKOxaqXwR9--SZHR8Ayq1vikdGFaKxtqYLDT1xI"/>
+
+  <!-- Category 1: Hair Artistry -->
+  <section class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 items-center fade-up">
+    <div class="lg:col-span-7 overflow-hidden aspect-[4/5] lg:aspect-[16/10]">
+      <img alt="Luxury Hair Salon" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAYxX3hwLByDSMRbR7QmqccDRfaEvxGT0a0skErulsMotfvKBO05PH9klfbP0HsFVqpAIC7hsjwg3FEcvQN1DjyleRwZPENX_mvT6zUxFuB-70r1A9YG8wcMDQqo1d0Zi4g0NLsTsSTfSrG8Rs5lawAbZxtirsX7uoaBRDr3M1sT7ypPEYgM6vtu2zETgWA8noJ11Jl3UWSKMoRIUhYd5efx-EClbsJmc6hI0buxKOxaqXwR9--SZHR8Ayq1vikdGFaKxtqYLDT1xI"/>
+    </div>
+    <div class="lg:col-span-5 flex flex-col justify-center">
+      <span class="text-rosegold text-sm uppercase tracking-[0.3em] mb-4">Volume I</span>
+      <h2 class="font-display text-4xl md:text-5xl mb-4">Hair Artistry</h2>
+      <div class="w-20 h-px bg-rosegold mb-12"></div>
+      <ul class="space-y-8">
+        <li class="group flex justify-between items-center gap-6">
+          <div class="flex-1">
+            
+          <div class="flex justify-between items-baseline mb-2">
+            <span class="editorial-italic text-2xl group-hover:text-rosegold transition-colors">Balayage Signature</span>
+            <span class="text-sm tracking-widest text-charcoal/40">FROM $350</span>
+          </div>
+          <p class="text-charcoal/60 font-light text-sm">Sun-kissed, hand-painted gradients tailored to your natural movement.</p>
+        
+          </div>
+          <button class="add-service-btn w-10 h-10 rounded-full border border-rosegold text-rosegold hover:bg-rosegold hover:text-white flex items-center justify-center transition-colors shrink-0" data-service="Balayage Signature" data-price="350">
+            <span class="material-symbols-outlined text-sm pt-0.5">add</span>
+          </button>
+        </li>
+        <li class="group flex justify-between items-center gap-6">
+          <div class="flex-1">
+            
+          <div class="flex justify-between items-baseline mb-2">
+            <span class="editorial-italic text-2xl group-hover:text-rosegold transition-colors">Precision Cut</span>
+            <span class="text-sm tracking-widest text-charcoal/40">FROM $120</span>
+          </div>
+          <p class="text-charcoal/60 font-light text-sm">Architectural shaping designed to enhance bone structure and texture.</p>
+        
+          </div>
+          <button class="add-service-btn w-10 h-10 rounded-full border border-rosegold text-rosegold hover:bg-rosegold hover:text-white flex items-center justify-center transition-colors shrink-0" data-service="Precision Cut" data-price="120">
+            <span class="material-symbols-outlined text-sm pt-0.5">add</span>
+          </button>
+        </li>
+        <li class="group flex justify-between items-center gap-6">
+          <div class="flex-1">
+            
+          <div class="flex justify-between items-baseline mb-2">
+            <span class="editorial-italic text-2xl group-hover:text-rosegold transition-colors">Bridal Styling</span>
+            <span class="text-sm tracking-widest text-charcoal/40">UPON INQUIRY</span>
+          </div>
+          <p class="text-charcoal/60 font-light text-sm">High-fashion editorial looks for your most significant moments.</p>
+        
+          </div>
+          <button class="add-service-btn w-10 h-10 rounded-full border border-rosegold text-rosegold hover:bg-rosegold hover:text-white flex items-center justify-center transition-colors shrink-0" data-service="Bridal Styling" data-price="150">
+            <span class="material-symbols-outlined text-sm pt-0.5">add</span>
+          </button>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Category 2: Molecular Facials (Reversed) -->
+  <section class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 items-center fade-up">
+    <div class="lg:col-span-5 order-2 lg:order-1 flex flex-col justify-center">
+      <span class="text-rosegold text-sm uppercase tracking-[0.3em] mb-4">Volume II</span>
+      <h2 class="font-display text-4xl md:text-5xl mb-4">Molecular Facials</h2>
+      <div class="w-20 h-px bg-rosegold mb-12"></div>
+      <ul class="space-y-8">
+        <li class="group flex justify-between items-center gap-6">
+          <div class="flex-1">
+            
+          <div class="flex justify-between items-baseline mb-2">
+            <span class="editorial-italic text-2xl group-hover:text-rosegold transition-colors">Diamond Brilliance</span>
+            <span class="text-sm tracking-widest text-charcoal/40">FROM $280</span>
+          </div>
+          <p class="text-charcoal/60 font-light text-sm">Micro-resurfacing paired with crushed diamond dust for ultimate luminosity.</p>
+        
+          </div>
+          <button class="add-service-btn w-10 h-10 rounded-full border border-rosegold text-rosegold hover:bg-rosegold hover:text-white flex items-center justify-center transition-colors shrink-0" data-service="Diamond Brilliance" data-price="280">
+            <span class="material-symbols-outlined text-sm pt-0.5">add</span>
+          </button>
+        </li>
+        <li class="group flex justify-between items-center gap-6">
+          <div class="flex-1">
+            
+          <div class="flex justify-between items-baseline mb-2">
+            <span class="editorial-italic text-2xl group-hover:text-rosegold transition-colors">HydraFacial Luxe</span>
+            <span class="text-sm tracking-widest text-charcoal/40">FROM $240</span>
+          </div>
+          <p class="text-charcoal/60 font-light text-sm">Deep hydration and vortex extraction for a clear, dewy complexion.</p>
+        
+          </div>
+          <button class="add-service-btn w-10 h-10 rounded-full border border-rosegold text-rosegold hover:bg-rosegold hover:text-white flex items-center justify-center transition-colors shrink-0" data-service="HydraFacial Luxe" data-price="240">
+            <span class="material-symbols-outlined text-sm pt-0.5">add</span>
+          </button>
+        </li>
+        <li class="group flex justify-between items-center gap-6">
+          <div class="flex-1">
+            
+          <div class="flex justify-between items-baseline mb-2">
+            <span class="editorial-italic text-2xl group-hover:text-rosegold transition-colors">Glow Therapy</span>
+            <span class="text-sm tracking-widest text-charcoal/40">FROM $190</span>
+          </div>
+          <p class="text-charcoal/60 font-light text-sm">LED light infusion targeting cellular rejuvenation and even tone.</p>
+        
+          </div>
+          <button class="add-service-btn w-10 h-10 rounded-full border border-rosegold text-rosegold hover:bg-rosegold hover:text-white flex items-center justify-center transition-colors shrink-0" data-service="Glow Therapy" data-price="190">
+            <span class="material-symbols-outlined text-sm pt-0.5">add</span>
+          </button>
+        </li>
+      </ul>
+    </div>
+    <div class="lg:col-span-7 order-1 lg:order-2 overflow-hidden aspect-[4/5] lg:aspect-[16/10]">
+      <img alt="Facial Treatment" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAEf5B3hsCMO0xWgFFigUslQAvBwH9q16IdbuAfiEQQ0UZ5SjUF0wz8lGxfEgHMRFrY6kzRwWTkhNkaOjPA4y_JVyj5U1NblCRZMAxYHSCqZdwM5adKu2q83-n3vMu6NACjpGuygfxQgD_BTYEuk-baFQ-Z9hboFMd0PKzl2jB_2YIVjV9l-wO_EQV2FsjPkl-5bVQ2ds8O0oF-MMnxjGlzdfmyQ1yAgPBbN5WL-xaldM1ZVfMwfPyfvF-P8TH2v0bekdORo01hAmY"/>
+    </div>
+  </section>
+
+  <!-- Category 3: Serenity Rituals -->
+  <section class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 items-center fade-up">
+    <div class="lg:col-span-7 overflow-hidden aspect-[4/5] lg:aspect-[16/10]">
+      <img alt="Massage Ritual" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB3hQXCQ7ye1sJxLFA1jqQkSOOcXEWjcYS9r-UYrv0uWmYJWLE7z4s2WNHwWjfRy_X1F-2aQIzlvYXyS23B1PvzfIEEIk9b3G1nEFxSUdttg-khryHRnFeXSWbHBAkbHRXw2a1DN61uqJZcq6Ot8ap66i989-QF0kNMBPCJ835o3UQ01YbiHQ1RCIn6pqLbYpOGjosIwVMRF1S_P0XsQElGn01lKsA5txXcIDCNiQWJaYQATd8O3q4rbjzy7obFCvwqP81Ve1yMTIg"/>
+    </div>
+    <div class="lg:col-span-5 flex flex-col justify-center">
+      <span class="text-rosegold text-sm uppercase tracking-[0.3em] mb-4">Volume III</span>
+      <h2 class="font-display text-4xl md:text-5xl mb-4">Serenity Rituals</h2>
+      <div class="w-20 h-px bg-rosegold mb-12"></div>
+      <ul class="space-y-8">
+        <li class="group flex justify-between items-center gap-6">
+          <div class="flex-1">
+            
+          <div class="flex justify-between items-baseline mb-2">
+            <span class="editorial-italic text-2xl group-hover:text-rosegold transition-colors">Hot Stone Release</span>
+            <span class="text-sm tracking-widest text-charcoal/40">FROM $210</span>
+          </div>
+          <p class="text-charcoal/60 font-light text-sm">Ancient basalt stones melt away deep-seated muscular tension.</p>
+        
+          </div>
+          <button class="add-service-btn w-10 h-10 rounded-full border border-rosegold text-rosegold hover:bg-rosegold hover:text-white flex items-center justify-center transition-colors shrink-0" data-service="Hot Stone Release" data-price="210">
+            <span class="material-symbols-outlined text-sm pt-0.5">add</span>
+          </button>
+        </li>
+        <li class="group flex justify-between items-center gap-6">
+          <div class="flex-1">
+            
+          <div class="flex justify-between items-baseline mb-2">
+            <span class="editorial-italic text-2xl group-hover:text-rosegold transition-colors">Detox Sea Wrap</span>
+            <span class="text-sm tracking-widest text-charcoal/40">FROM $185</span>
+          </div>
+          <p class="text-charcoal/60 font-light text-sm">Mineral-rich algae cocoon to stimulate lymphatic drainage and firm skin.</p>
+        
+          </div>
+          <button class="add-service-btn w-10 h-10 rounded-full border border-rosegold text-rosegold hover:bg-rosegold hover:text-white flex items-center justify-center transition-colors shrink-0" data-service="Detox Sea Wrap" data-price="185">
+            <span class="material-symbols-outlined text-sm pt-0.5">add</span>
+          </button>
+        </li>
+        <li class="group flex justify-between items-center gap-6">
+          <div class="flex-1">
+            
+          <div class="flex justify-between items-baseline mb-2">
+            <span class="editorial-italic text-2xl group-hover:text-rosegold transition-colors">Aromatherapy</span>
+            <span class="text-sm tracking-widest text-charcoal/40">FROM $160</span>
+          </div>
+          <p class="text-charcoal/60 font-light text-sm">Bespoke essential oil blends curated for your emotional wellbeing.</p>
+        
+          </div>
+          <button class="add-service-btn w-10 h-10 rounded-full border border-rosegold text-rosegold hover:bg-rosegold hover:text-white flex items-center justify-center transition-colors shrink-0" data-service="Aromatherapy" data-price="160">
+            <span class="material-symbols-outlined text-sm pt-0.5">add</span>
+          </button>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Category 4: Luxe Manicure (Reversed) -->
+  <section class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 items-center fade-up">
+    <div class="lg:col-span-5 order-2 lg:order-1 flex flex-col justify-center">
+      <span class="text-rosegold text-sm uppercase tracking-[0.3em] mb-4">Volume IV</span>
+      <h2 class="font-display text-4xl md:text-5xl mb-4">Luxe Manicure</h2>
+      <div class="w-20 h-px bg-rosegold mb-12"></div>
+      <ul class="space-y-8">
+        <li class="group flex justify-between items-center gap-6">
+          <div class="flex-1">
+            
+          <div class="flex justify-between items-baseline mb-2">
+            <span class="editorial-italic text-2xl group-hover:text-rosegold transition-colors">Gel Polish Elite</span>
+            <span class="text-sm tracking-widest text-charcoal/40">FROM $95</span>
+          </div>
+          <p class="text-charcoal/60 font-light text-sm">Long-wear hybrid polish with a high-shine editorial finish.</p>
+        
+          </div>
+          <button class="add-service-btn w-10 h-10 rounded-full border border-rosegold text-rosegold hover:bg-rosegold hover:text-white flex items-center justify-center transition-colors shrink-0" data-service="Gel Polish Elite" data-price="95">
+            <span class="material-symbols-outlined text-sm pt-0.5">add</span>
+          </button>
+        </li>
+        <li class="group flex justify-between items-center gap-6">
+          <div class="flex-1">
+            
+          <div class="flex justify-between items-baseline mb-2">
+            <span class="editorial-italic text-2xl group-hover:text-rosegold transition-colors">Signature Nail Art</span>
+            <span class="text-sm tracking-widest text-charcoal/40">FROM $130</span>
+          </div>
+          <p class="text-charcoal/60 font-light text-sm">Minimalist geometric or custom organic hand-painted designs.</p>
+        
+          </div>
+          <button class="add-service-btn w-10 h-10 rounded-full border border-rosegold text-rosegold hover:bg-rosegold hover:text-white flex items-center justify-center transition-colors shrink-0" data-service="Signature Nail Art" data-price="130">
+            <span class="material-symbols-outlined text-sm pt-0.5">add</span>
+          </button>
+        </li>
+        <li class="group flex justify-between items-center gap-6">
+          <div class="flex-1">
+            
+          <div class="flex justify-between items-baseline mb-2">
+            <span class="editorial-italic text-2xl group-hover:text-rosegold transition-colors">Atelier Pedicure</span>
+            <span class="text-sm tracking-widest text-charcoal/40">FROM $110</span>
+          </div>
+          <p class="text-charcoal/60 font-light text-sm">Luxury soak, exfoliation, and massage for total foot restoration.</p>
+        
+          </div>
+          <button class="add-service-btn w-10 h-10 rounded-full border border-rosegold text-rosegold hover:bg-rosegold hover:text-white flex items-center justify-center transition-colors shrink-0" data-service="Atelier Pedicure" data-price="110">
+            <span class="material-symbols-outlined text-sm pt-0.5">add</span>
+          </button>
+        </li>
+      </ul>
+    </div>
+    <div class="lg:col-span-7 order-1 lg:order-2 overflow-hidden aspect-[4/5] lg:aspect-[16/10]">
+      <img alt="Manicure Ritual" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDFDUAYRwJ6fggF_Eo5kTm4qsb0PAYKBtBOqycrjzTJxXuOV9_mqIg_Zre8aCNQvceXFNRPwMYmYZhCyKC5dq3AZuu44xhNEKMxrscAsjnQIe1tjE_dXsEGy7JUaMEwa7Hdr6-G7xcUF1SBBKXiZeIU1w38qHuw5DxbzM56R2EpWWB7mgzwgKOmroFfTSt9q_0NljojG-jktoao1n1Vv6asIO6D86AjzwqGauBNOkEK-scOZP6rAsoOmWV5954xuz_rbpA0em0kgZI"/>
+    </div>
+  </section>
+
 </div>
-<div class="lg:col-span-5 flex flex-col justify-center">
-<span class="text-primary text-sm uppercase tracking-[0.3em] mb-4">Volume I</span>
-<h2 class="text-4xl md:text-5xl font-headline mb-12">Hair Artistry</h2>
-<ul class="space-y-8">
-<li class="group">
-<div class="flex justify-between items-baseline mb-2">
-<span class="editorial-italic text-2xl group-hover:text-primary transition-colors">Balayage Signature</span>
-<span class="text-sm tracking-widest text-outline">FROM $350</span>
-</div>
-<p class="text-stone-500 font-light text-sm">Sun-kissed, hand-painted gradients tailored to your natural movement.</p>
-</li>
-<li class="group">
-<div class="flex justify-between items-baseline mb-2">
-<span class="editorial-italic text-2xl group-hover:text-primary transition-colors">Precision Cut</span>
-<span class="text-sm tracking-widest text-outline">FROM $120</span>
-</div>
-<p class="text-stone-500 font-light text-sm">Architectural shaping designed to enhance bone structure and texture.</p>
-</li>
-<li class="group">
-<div class="flex justify-between items-baseline mb-2">
-<span class="editorial-italic text-2xl group-hover:text-primary transition-colors">Bridal Styling</span>
-<span class="text-sm tracking-widest text-outline">UPON INQUIRY</span>
-</div>
-<p class="text-stone-500 font-light text-sm">High-fashion editorial looks for your most significant moments.</p>
-</li>
-</ul>
-</div>
+<!-- END: ServiceCategories -->
+
+<!-- BEGIN: SignaturePackage -->
+<section class="bg-white/50 py-24 my-12 border-y border-rosegold/10 fade-up">
+  <div class="container mx-auto px-8 grid md:grid-cols-2 gap-20 items-center">
+    <div class="space-y-8">
+      <span class="text-rosegold uppercase tracking-widest text-sm font-semibold">Seasonal Exclusivity</span>
+      <h2 class="font-display text-5xl md:text-6xl leading-tight text-charcoal">
+        Golden Glow<br/><span class="font-accent italic">Signature Package</span>
+      </h2>
+      <div class="w-20 h-px bg-rosegold"></div>
+      <p class="text-charcoal/70 text-lg leading-relaxed font-light max-w-lg">
+        The ultimate Atelier experience. This three-hour transformative journey combines our Diamond Facial, a 60-minute Aromatherapy Massage, and a Signature Blow-dry. Leave feeling renewed and radiant.
+      </p>
+      <div class="flex items-center gap-6">
+        <span class="font-display text-4xl text-charcoal">$525</span>
+        <div class="h-px w-12 bg-rosegold"></div>
+        <span class="text-sm text-charcoal/40 tracking-widest">SAVINGS OF $75</span>
+      </div>
+    </div>
+    <div class="fade-up">
+      <img alt="Package Ritual — golden oil swirls and silk fabric" class="w-full h-[400px] object-cover shadow-2xl" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC7lQwRju3-YtNA7-XXnHYMO0vhaxY8acpysPrw-J8VTJLZGxrt1e418xE5yjA6a2lfTqzWROilCZ3xVgd7fkt7oRdEUHLZhOkSs33SdhmSgVfcIN8-tuL34zETpg8D3nkuyqbxSy89RWJOIE0jNaALDtOwFQgrE5v0GpwGbpTC_zefSvzK9KvYK7YMf4v6TcTVn_bMr7pWLymbz14fWh706DRBEhtkheDWoM_oQsPNhMNncXmjzl9vR1fEDyc_z1yW60Gvme4zyWE"/>
+    </div>
+  </div>
 </section>
-<!-- Category 2: Molecular Facials (Reversed) -->
-<section class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 items-center">
-<div class="lg:col-span-5 order-2 lg:order-1 flex flex-col justify-center">
-<span class="text-primary text-sm uppercase tracking-[0.3em] mb-4">Volume II</span>
-<h2 class="text-4xl md:text-5xl font-headline mb-12">Molecular Facials</h2>
-<ul class="space-y-8">
-<li class="group">
-<div class="flex justify-between items-baseline mb-2">
-<span class="editorial-italic text-2xl group-hover:text-primary transition-colors">Diamond Brilliance</span>
-<span class="text-sm tracking-widest text-outline">FROM $280</span>
-</div>
-<p class="text-stone-500 font-light text-sm">Micro-resurfacing paired with crushed diamond dust for ultimate luminosity.</p>
-</li>
-<li class="group">
-<div class="flex justify-between items-baseline mb-2">
-<span class="editorial-italic text-2xl group-hover:text-primary transition-colors">HydraFacial Luxe</span>
-<span class="text-sm tracking-widest text-outline">FROM $240</span>
-</div>
-<p class="text-stone-500 font-light text-sm">Deep hydration and vortex extraction for a clear, dewy complexion.</p>
-</li>
-<li class="group">
-<div class="flex justify-between items-baseline mb-2">
-<span class="editorial-italic text-2xl group-hover:text-primary transition-colors">Glow Therapy</span>
-<span class="text-sm tracking-widest text-outline">FROM $190</span>
-</div>
-<p class="text-stone-500 font-light text-sm">LED light infusion targeting cellular rejuvenation and even tone.</p>
-</li>
-</ul>
-</div>
-<div class="lg:col-span-7 order-1 lg:order-2 overflow-hidden rounded-xl aspect-[4/5] lg:aspect-[16/10]">
-<img alt="Facial Treatment" class="w-full h-full object-cover transition-transform duration-1000 hover:scale-105" data-alt="Close up of serum being applied to a woman's face during a luxury facial" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAEf5B3hsCMO0xWgFFigUslQAvBwH9q16IdbuAfiEQQ0UZ5SjUF0wz8lGxfEgHMRFrY6kzRwWTkhNkaOjPA4y_JVyj5U1NblCRZMAxYHSCqZdwM5adKu2q83-n3vMu6NACjpGuygfxQgD_BTYEuk-baFQ-Z9hboFMd0PKzl2jB_2YIVjV9l-wO_EQV2FsjPkl-5bVQ2ds8O0oF-MMnxjGlzdfmyQ1yAgPBbN5WL-xaldM1ZVfMwfPyfvF-P8TH2v0bekdORo01hAmY"/>
-</div>
+<!-- END: SignaturePackage -->
+
+<!-- BEGIN: BookingCTA -->
+<section class="relative h-[80vh] flex items-center justify-center overflow-hidden">
+  <img alt="Golden Hour Glow" class="absolute inset-0 w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD3zH9r6g88ZiLUWmAfRQWytYLdinvF7JsB0reh9OhP-rIk3UNML3gPD58K9rWX8Fima-10CdV1_kwRCQfI4cXdzIHKnjre3eTh7Bre0ZqGdWdJmZZ4pzqvz-HwSPOnHXRLQao_BIIcJwGZZeqol1RTtMkvpivFpY0ov6eM9hzOV4EBbSce2j747DKxO7y6AbHl7Q_zUVpe3O5NpLzWwnTO58T7HnpcIJg1m6-1M8xNAgNiBlCWwlEslSMmyrgyesboVrEqd5-OP40"/>
+  <div class="absolute inset-0 bg-charcoal/20"></div>
+  <div class="relative z-10 text-center text-ivory fade-up">
+    <span class="text-xs uppercase tracking-[0.5em] mb-6 block">Your Transformation Awaits</span>
+    <h2 class="font-display text-7xl md:text-9xl mb-10">Ready to Glow?</h2>
+    <a class="inline-block px-12 py-5 bg-white text-charcoal text-sm tracking-[0.3em] uppercase hover:bg-rosegold hover:text-white transition-all font-bold" href="#">
+      Book Your Ritual
+    </a>
+  </div>
 </section>
-<!-- Category 3: Serenity Rituals -->
-<section class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 items-center">
-<div class="lg:col-span-7 overflow-hidden rounded-xl aspect-[4/5] lg:aspect-[16/10]">
-<img alt="Massage Ritual" class="w-full h-full object-cover transition-transform duration-1000 hover:scale-105" data-alt="Warm basalt stones placed on a person's back in a serene spa setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB3hQXCQ7ye1sJxLFA1jqQkSOOcXEWjcYS9r-UYrv0uWmYJWLE7z4s2WNHwWjfRy_X1F-2aQIzlvYXyS23B1PvzfIEEIk9b3G1nEFxSUdttg-khryHRnFeXSWbHBAkbHRXw2a1DN61uqJZcq6Ot8ap66i989-QF0kNMBPCJ835o3UQ01YbiHQ1RCIn6pqLbYpOGjosIwVMRF1S_P0XsQElGn01lKsA5txXcIDCNiQWJaYQATd8O3q4rbjzy7obFCvwqP81Ve1yMTIg"/>
-</div>
-<div class="lg:col-span-5 flex flex-col justify-center">
-<span class="text-primary text-sm uppercase tracking-[0.3em] mb-4">Volume III</span>
-<h2 class="text-4xl md:text-5xl font-headline mb-12">Serenity Rituals</h2>
-<ul class="space-y-8">
-<li class="group">
-<div class="flex justify-between items-baseline mb-2">
-<span class="editorial-italic text-2xl group-hover:text-primary transition-colors">Hot Stone Release</span>
-<span class="text-sm tracking-widest text-outline">FROM $210</span>
-</div>
-<p class="text-stone-500 font-light text-sm">Ancient basalt stones melt away deep-seated muscular tension.</p>
-</li>
-<li class="group">
-<div class="flex justify-between items-baseline mb-2">
-<span class="editorial-italic text-2xl group-hover:text-primary transition-colors">Detox Sea Wrap</span>
-<span class="text-sm tracking-widest text-outline">FROM $185</span>
-</div>
-<p class="text-stone-500 font-light text-sm">Mineral-rich algae cocoon to stimulate lymphatic drainage and firm skin.</p>
-</li>
-<li class="group">
-<div class="flex justify-between items-baseline mb-2">
-<span class="editorial-italic text-2xl group-hover:text-primary transition-colors">Aromatherapy</span>
-<span class="text-sm tracking-widest text-outline">FROM $160</span>
-</div>
-<p class="text-stone-500 font-light text-sm">Bespoke essential oil blends curated for your emotional wellbeing.</p>
-</li>
-</ul>
-</div>
-</section>
-<!-- Category 4: Luxe Manicure (Reversed) -->
-<section class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 items-center">
-<div class="lg:col-span-5 order-2 lg:order-1 flex flex-col justify-center">
-<span class="text-primary text-sm uppercase tracking-[0.3em] mb-4">Volume IV</span>
-<h2 class="text-4xl md:text-5xl font-headline mb-12">Luxe Manicure</h2>
-<ul class="space-y-8">
-<li class="group">
-<div class="flex justify-between items-baseline mb-2">
-<span class="editorial-italic text-2xl group-hover:text-primary transition-colors">Gel Polish Elite</span>
-<span class="text-sm tracking-widest text-outline">FROM $95</span>
-</div>
-<p class="text-stone-500 font-light text-sm">Long-wear hybrid polish with a high-shine editorial finish.</p>
-</li>
-<li class="group">
-<div class="flex justify-between items-baseline mb-2">
-<span class="editorial-italic text-2xl group-hover:text-primary transition-colors">Signature Nail Art</span>
-<span class="text-sm tracking-widest text-outline">FROM $130</span>
-</div>
-<p class="text-stone-500 font-light text-sm">Minimalist geometric or custom organic hand-painted designs.</p>
-</li>
-<li class="group">
-<div class="flex justify-between items-baseline mb-2">
-<span class="editorial-italic text-2xl group-hover:text-primary transition-colors">Atelier Pedicure</span>
-<span class="text-sm tracking-widest text-outline">FROM $110</span>
-</div>
-<p class="text-stone-500 font-light text-sm">Luxury soak, exfoliation, and massage for total foot restoration.</p>
-</li>
-</ul>
-</div>
-<div class="lg:col-span-7 order-1 lg:order-2 overflow-hidden rounded-xl aspect-[4/5] lg:aspect-[16/10]">
-<img alt="Manicure Ritual" class="w-full h-full object-cover transition-transform duration-1000 hover:scale-105" data-alt="Elegant hands resting on ivory marble surface with neutral nail polish" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDFDUAYRwJ6fggF_Eo5kTm4qsb0PAYKBtBOqycrjzTJxXuOV9_mqIg_Zre8aCNQvceXFNRPwMYmYZhCyKC5dq3AZuu44xhNEKMxrscAsjnQIe1tjE_dXsEGy7JUaMEwa7Hdr6-G7xcUF1SBBKXiZeIU1w38qHuw5DxbzM56R2EpWWB7mgzwgKOmroFfTSt9q_0NljojG-jktoao1n1Vv6asIO6D86AjzwqGauBNOkEK-scOZP6rAsoOmWV5954xuz_rbpA0em0kgZI"/>
-</div>
-</section>
-</div>
-<!-- Signature Package Strip -->
-<section class="bg-secondary-container/30 py-24 my-24 overflow-hidden">
-<div class="max-w-screen-2xl mx-auto px-12 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-<div>
-<h3 class="text-primary text-sm uppercase tracking-[0.4em] mb-6">Seasonal Exclusivity</h3>
-<h2 class="text-5xl font-headline mb-8 leading-tight">Golden Glow<br/>Signature Package</h2>
-<p class="text-stone-600 leading-relaxed mb-8 max-w-lg">
-                        The ultimate Atelier experience. This three-hour transformative journey combines our Diamond Facial, a 60-minute Aromatherapy Massage, and a Signature Blow-dry. Leave feeling renewed and radiant.
-                    </p>
-<div class="flex items-center gap-4">
-<span class="text-3xl font-headline">$525</span>
-<div class="h-px w-12 bg-outline-variant"></div>
-<span class="text-sm text-outline tracking-widest">SAVINGS OF $75</span>
-</div>
-</div>
-<div class="relative">
-<div class="absolute -top-12 -left-12 w-64 h-64 bg-primary/5 rounded-full blur-3xl"></div>
-<img alt="Package Ritual" class="w-full h-[400px] object-cover rounded-xl shadow-2xl shadow-primary/10 relative z-10" data-alt="Abstract aesthetic of golden oil swirls and silk fabric" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC7lQwRju3-YtNA7-XXnHYMO0vhaxY8acpysPrw-J8VTJLZGxrt1e418xE5yjA6a2lfTqzWROilCZ3xVgd7fkt7oRdEUHLZhOkSs33SdhmSgVfcIN8-tuL34zETpg8D3nkuyqbxSy89RWJOIE0jNaALDtOwFQgrE5v0GpwGbpTC_zefSvzK9KvYK7YMf4v6TcTVn_bMr7pWLymbz14fWh706DRBEhtkheDWoM_oQsPNhMNncXmjzl9vR1fEDyc_z1yW60Gvme4zyWE"/>
-</div>
-</div>
-</section>
-<!-- Booking CTA -->
-<section class="py-32 text-center">
-<div class="max-w-xl mx-auto px-6">
-<span class="material-symbols-outlined text-primary text-4xl mb-6" style="font-variation-settings: 'FILL' 1;">spa</span>
-<h2 class="text-4xl md:text-5xl font-headline mb-8">Your Transformation Awaits</h2>
-<p class="text-stone-500 mb-12 font-light">Join the atelier and discover a new standard of personal care and ritualistic beauty.</p>
-<button class="bg-primary text-white px-12 py-4 rounded-full hover:bg-on-primary-container transition-all duration-500 uppercase tracking-[0.2em] text-sm active:scale-95 shadow-lg shadow-primary/20">
-                    Book Now
-                </button>
-</div>
-</section>
+<!-- END: BookingCTA -->
 </main>
+
 <!-- BEGIN: Footer -->
 <footer class="bg-charcoal text-ivory py-24 px-8 border-t border-white/5">
-<div class="container mx-auto">
-<div class="grid md:grid-cols-4 gap-16 mb-20">
-<div class="space-y-8">
-<a class="font-display text-4xl tracking-[0.2em]" href="index.html">AURA</a>
-<p class="text-ivory/40 text-sm leading-relaxed max-w-xs">
-            The definitive destination for luxury beauty, editorial hairstyling, and clinical skin rejuvenation.
-          </p>
-<div class="flex gap-6 text-rosegold">
-<a class="hover:text-white transition-colors" href="#">IG</a>
-<a class="hover:text-white transition-colors" href="#">FB</a>
-<a class="hover:text-white transition-colors" href="#">LI</a>
-</div>
-</div>
-<div>
-<h5 class="text-rosegold uppercase tracking-widest text-xs font-bold mb-8">Sanctuary</h5>
-<ul class="space-y-4 text-ivory/60 text-sm">
-<li><a class="hover:text-white transition-colors" href="#">Our Philosophy</a></li>
-<li><a class="hover:text-white transition-colors" href="#">The Team</a></li>
-<li><a class="hover:text-white transition-colors" href="#">Photo Gallery</a></li>
-<li><a class="hover:text-white transition-colors" href="#">Careers</a></li>
-</ul>
-</div>
-<div>
-<h5 class="text-rosegold uppercase tracking-widest text-xs font-bold mb-8">Rituals</h5>
-<ul class="space-y-4 text-ivory/60 text-sm">
-<li><a class="hover:text-white transition-colors" href="services.html">Hair Artistry</a></li>
-<li><a class="hover:text-white transition-colors" href="services.html">Facial Therapy</a></li>
-<li><a class="hover:text-white transition-colors" href="services.html">Body Sanctuary</a></li>
-<li><a class="hover:text-white transition-colors" href="services.html">Bridal Suites</a></li>
-</ul>
-</div>
-<div>
-<h5 class="text-rosegold uppercase tracking-widest text-xs font-bold mb-8">Connect</h5>
-<ul class="space-y-4 text-ivory/60 text-sm">
-<li>124 Madison Avenue, NY</li>
-<li>hello@aurasalon.com</li>
-<li>+1 (212) 555-0198</li>
-<li class="pt-4"><a class="text-rosegold border-b border-rosegold pb-1" href="#">Get Directions</a></li>
-</ul>
-</div>
-</div>
-<div class="pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6 text-[10px] uppercase tracking-widest text-ivory/30">
-<p>© 2024 AURA SALON &amp; SPA. ALL RIGHTS RESERVED.</p>
-<div class="flex gap-8">
-<a href="#">Privacy Policy</a>
-<a href="#">Terms of Service</a>
-</div>
-</div>
-</div>
+  <div class="container mx-auto">
+    <div class="grid md:grid-cols-4 gap-16 mb-20">
+      <div class="space-y-8">
+        <a class="font-display text-4xl tracking-[0.2em]" href="index.html">AURA</a>
+        <p class="text-ivory/40 text-sm leading-relaxed max-w-xs">
+          The definitive destination for luxury beauty, editorial hairstyling, and clinical skin rejuvenation.
+        </p>
+        <div class="flex gap-6 text-rosegold">
+          <a class="hover:text-white transition-colors" href="#">IG</a>
+          <a class="hover:text-white transition-colors" href="#">FB</a>
+          <a class="hover:text-white transition-colors" href="#">LI</a>
+        </div>
+      </div>
+      <div>
+        <h5 class="text-rosegold uppercase tracking-widest text-xs font-bold mb-8">Sanctuary</h5>
+        <ul class="space-y-4 text-ivory/60 text-sm">
+          <li><a class="hover:text-white transition-colors" href="index.html">Home</a></li>
+          <li><a class="hover:text-white transition-colors" href="#">The Team</a></li>
+          <li><a class="hover:text-white transition-colors" href="gallery.html">Photo Gallery</a></li>
+          <li><a class="hover:text-white transition-colors" href="#">Careers</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5 class="text-rosegold uppercase tracking-widest text-xs font-bold mb-8">Rituals</h5>
+        <ul class="space-y-4 text-ivory/60 text-sm">
+          <li><a class="hover:text-white transition-colors" href="services.html">Hair Artistry</a></li>
+          <li><a class="hover:text-white transition-colors" href="services.html">Facial Therapy</a></li>
+          <li><a class="hover:text-white transition-colors" href="services.html">Body Sanctuary</a></li>
+          <li><a class="hover:text-white transition-colors" href="services.html">Bridal Suites</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5 class="text-rosegold uppercase tracking-widest text-xs font-bold mb-8">Connect</h5>
+        <ul class="space-y-4 text-ivory/60 text-sm">
+          <li>124 Madison Avenue, NY</li>
+          <li>hello@aurasalon.com</li>
+          <li>+1 (212) 555-0198</li>
+          <li class="pt-4"><a class="text-rosegold border-b border-rosegold pb-1" href="#">Get Directions</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6 text-[10px] uppercase tracking-widest text-ivory/30">
+      <p>© 2024 AURA SALON &amp; SPA. ALL RIGHTS RESERVED.</p>
+      <div class="flex gap-8">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+      </div>
+    </div>
+  </div>
 </footer>
 <!-- END: Footer -->
+
 <script data-purpose="scroll-interactions">
     // Navbar Scroll Effect
     window.addEventListener('scroll', () => {
@@ -359,10 +457,7 @@
     });
 
     // Fade-up Animation Observer
-    const observerOptions = {
-      threshold: 0.1
-    };
-
+    const observerOptions = { threshold: 0.1 };
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -370,7 +465,81 @@
         }
       });
     }, observerOptions);
-
     document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
   </script>
+
+<!-- Floating Booking Bar -->
+<div id="floating-booking-bar" class="fixed bottom-0 left-0 w-full bg-charcoal text-ivory py-4 px-4 md:px-8 transform translate-y-full transition-transform duration-500 z-50 flex justify-between items-center shadow-2xl border-t border-rosegold/30">
+  <div class="flex items-center gap-4 md:gap-6">
+    <div class="w-10 h-10 md:w-12 md:h-12 rounded-full border border-rosegold/50 flex items-center justify-center text-rosegold font-display text-xl md:text-2xl italic" id="cart-count">0</div>
+    <div>
+      <p class="text-[10px] md:text-xs tracking-widest uppercase text-ivory/60 font-medium mb-1">Your Ritual</p>
+      <p class="font-body text-sm tracking-wide text-rosegold transition-all font-bold" id="cart-total">$0</p>
+    </div>
+  </div>
+  <a href="Booking.html" class="px-6 md:px-8 py-3 bg-rosegold text-white text-[10px] md:text-xs tracking-widest uppercase font-bold hover:bg-white hover:text-charcoal transition-colors shadow-lg">
+    Continue
+  </a>
+</div>
+
+<script>
+    // Shopping Cart Logic for Services
+    let selectedServices = [];
+    try {
+        selectedServices = JSON.parse(localStorage.getItem('aura_booking_services') || '[]');
+    } catch(e) {}
+    
+    const floatingBar = document.getElementById('floating-booking-bar');
+    const cartCountEl = document.getElementById('cart-count');
+    const cartTotalEl = document.getElementById('cart-total');
+
+    const updateCartUI = () => {
+        if (selectedServices.length > 0) {
+            floatingBar.classList.remove('translate-y-full');
+            floatingBar.classList.add('translate-y-0');
+        } else {
+            floatingBar.classList.remove('translate-y-0');
+            floatingBar.classList.add('translate-y-full');
+        }
+
+        cartCountEl.textContent = selectedServices.length;
+        const total = selectedServices.reduce((acc, curr) => acc + curr.price, 0);
+        cartTotalEl.textContent = `${total}`;
+
+        // Update add buttons text/styles
+        document.querySelectorAll('.add-service-btn').forEach(btn => {
+            const serviceName = btn.getAttribute('data-service');
+            const icon = btn.querySelector('.material-symbols-outlined');
+            if (selectedServices.find(s => s.name === serviceName)) {
+                btn.classList.add('bg-rosegold', 'text-white');
+                icon.textContent = "check";
+            } else {
+                btn.classList.remove('bg-rosegold', 'text-white');
+                icon.textContent = "add";
+            }
+        });
+    }
+
+    document.querySelectorAll('.add-service-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            const serviceName = btn.getAttribute('data-service');
+            const servicePrice = parseFloat(btn.getAttribute('data-price'));
+            
+            const existingIndex = selectedServices.findIndex(s => s.name === serviceName);
+            if (existingIndex > -1) {
+                // Remove it
+                selectedServices.splice(existingIndex, 1);
+            } else {
+                // Add it
+                selectedServices.push({ name: serviceName, price: servicePrice });
+            }
+            
+            localStorage.setItem('aura_booking_services', JSON.stringify(selectedServices));
+            updateCartUI();
+        });
+    });
+
+    // Init
+    updateCartUI();
+</script>
 </body></html>
